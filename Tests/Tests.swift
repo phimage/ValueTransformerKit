@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import ValueTransformerKit
 
 class Tests: XCTestCase {
 
@@ -20,15 +21,29 @@ class Tests: XCTestCase {
         super.tearDown()
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+    func testSetValueTransformers() {
+        let names = ValueTransformer.valueTransformerNames()
+        var expected = names.count
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        StringTransformers.setValueTransformers()
+        expected = expected + StringTransformers.transformers.count
+        XCTAssertEqual(expected, ValueTransformer.valueTransformerNames().count)
+
+        ImageToRepresentationTransformers.setValueTransformers()
+        expected = expected + ImageToRepresentationTransformers.transformers.count
+        XCTAssertEqual(expected, ValueTransformer.valueTransformerNames().count)
+
+        RepresentationToImageTransformers.setValueTransformers()
+        expected = expected + RepresentationToImageTransformers.transformers.count
+        XCTAssertEqual(expected, ValueTransformer.valueTransformerNames().count)
+
+        NSLocale.Key.setValueTransformers()
+        expected = expected + NSLocale.Key.transformers.count
+        XCTAssertEqual(expected, ValueTransformer.valueTransformerNames().count)
+        
+        for name in ValueTransformer.valueTransformerNames() {
+            print(name.rawValue)
+            XCTAssertNotNil(ValueTransformer(forName: name))
         }
     }
 

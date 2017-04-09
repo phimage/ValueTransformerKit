@@ -15,7 +15,6 @@
 		48F35A821E962DE800A4D4F1 /* IdentityTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A811E962DE800A4D4F1 /* IdentityTransformer.swift */; };
 		48F35A841E962EA200A4D4F1 /* NumberToBoolTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A831E962EA200A4D4F1 /* NumberToBoolTransformer.swift */; };
 		48F35A861E962F2500A4D4F1 /* ImageTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A851E962F2500A4D4F1 /* ImageTransformers.swift */; };
-		48F35A881E962FB800A4D4F1 /* ISO3166CountryValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A871E962FB800A4D4F1 /* ISO3166CountryValueTransformer.swift */; };
 		48F35A8A1E962FF200A4D4F1 /* URLToStringTransFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A891E962FF200A4D4F1 /* URLToStringTransFormer.swift */; };
 		48F35A8C1E96307200A4D4F1 /* StringTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A8B1E96307200A4D4F1 /* StringTransformers.swift */; };
 		48F35A8E1E96310700A4D4F1 /* IsEmptyTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A8D1E96310700A4D4F1 /* IsEmptyTransformer.swift */; };
@@ -31,6 +30,7 @@
 		C4974D991E9AB76F00DA1DB2 /* ValueTransformerConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4974D981E9AB76F00DA1DB2 /* ValueTransformerConvertible.swift */; };
 		C4974D9B1E9ABB8D00DA1DB2 /* ReverseValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4974D9A1E9ABB8D00DA1DB2 /* ReverseValueTransformer.swift */; };
 		C4974D9F1E9ADB9C00DA1DB2 /* PercentTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4974D9E1E9ADB9C00DA1DB2 /* PercentTransformer.swift */; };
+		C4974DA11E9ADE0A00DA1DB2 /* LocalKeyTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4974DA01E9ADE0A00DA1DB2 /* LocalKeyTransformers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +55,6 @@
 		48F35A811E962DE800A4D4F1 /* IdentityTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentityTransformer.swift; sourceTree = "<group>"; };
 		48F35A831E962EA200A4D4F1 /* NumberToBoolTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberToBoolTransformer.swift; sourceTree = "<group>"; };
 		48F35A851E962F2500A4D4F1 /* ImageTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTransformers.swift; sourceTree = "<group>"; };
-		48F35A871E962FB800A4D4F1 /* ISO3166CountryValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISO3166CountryValueTransformer.swift; sourceTree = "<group>"; };
 		48F35A891E962FF200A4D4F1 /* URLToStringTransFormer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLToStringTransFormer.swift; sourceTree = "<group>"; };
 		48F35A8B1E96307200A4D4F1 /* StringTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTransformers.swift; sourceTree = "<group>"; };
 		48F35A8D1E96310700A4D4F1 /* IsEmptyTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsEmptyTransformer.swift; sourceTree = "<group>"; };
@@ -71,6 +70,7 @@
 		C4974D981E9AB76F00DA1DB2 /* ValueTransformerConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueTransformerConvertible.swift; sourceTree = "<group>"; };
 		C4974D9A1E9ABB8D00DA1DB2 /* ReverseValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReverseValueTransformer.swift; sourceTree = "<group>"; };
 		C4974D9E1E9ADB9C00DA1DB2 /* PercentTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentTransformer.swift; sourceTree = "<group>"; };
+		C4974DA01E9ADE0A00DA1DB2 /* LocalKeyTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalKeyTransformers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +129,7 @@
 				48F35A8D1E96310700A4D4F1 /* IsEmptyTransformer.swift */,
 				480BE9261E954B84002295D1 /* ClosureValueTransformer.swift */,
 				C4974D9C1E9ADAA500DA1DB2 /* Enum */,
+				C4974DA21E9ADF0B00DA1DB2 /* Array */,
 				C4974D9D1E9ADAD300DA1DB2 /* WIP */,
 			);
 			path = Sources;
@@ -156,6 +157,7 @@
 			children = (
 				48F35A8B1E96307200A4D4F1 /* StringTransformers.swift */,
 				48F35A851E962F2500A4D4F1 /* ImageTransformers.swift */,
+				C4974DA01E9ADE0A00DA1DB2 /* LocalKeyTransformers.swift */,
 			);
 			name = Enum;
 			sourceTree = "<group>";
@@ -164,21 +166,27 @@
 			isa = PBXGroup;
 			children = (
 				480BE9281E954E5D002295D1 /* DateTransformer.swift */,
-				48F35A971E96387D00A4D4F1 /* ArrayToStringTransformer.swift */,
+				C4974D9E1E9ADB9C00DA1DB2 /* PercentTransformer.swift */,
 				48F35A911E96315A00A4D4F1 /* ArchiveValueTransformer.swift */,
 				48F35A951E9637FC00A4D4F1 /* StringToDataTransformer.swift */,
 				48F35A891E962FF200A4D4F1 /* URLToStringTransFormer.swift */,
 				48F35A8F1E96313A00A4D4F1 /* URLStringToImageTransformer.swift */,
-				48F35A931E9631B800A4D4F1 /* OrderedSetArrayValueTransformer.swift */,
 				48F35A991E9638B600A4D4F1 /* SecondsToHoursValueTransformer.swift */,
 				48F35A9B1E96390100A4D4F1 /* EmptyTransformer.swift */,
 				48F35A831E962EA200A4D4F1 /* NumberToBoolTransformer.swift */,
 				C4974D961E9A8F4600DA1DB2 /* JSONValueTransformer.swift */,
-				48F35A871E962FB800A4D4F1 /* ISO3166CountryValueTransformer.swift */,
 				48F35A9D1E96398200A4D4F1 /* UIColorToString.swift */,
-				C4974D9E1E9ADB9C00DA1DB2 /* PercentTransformer.swift */,
 			);
 			name = WIP;
+			sourceTree = "<group>";
+		};
+		C4974DA21E9ADF0B00DA1DB2 /* Array */ = {
+			isa = PBXGroup;
+			children = (
+				48F35A931E9631B800A4D4F1 /* OrderedSetArrayValueTransformer.swift */,
+				48F35A971E96387D00A4D4F1 /* ArrayToStringTransformer.swift */,
+			);
+			name = Array;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +305,7 @@
 				48F35A901E96313A00A4D4F1 /* URLStringToImageTransformer.swift in Sources */,
 				480BE9291E954E5D002295D1 /* DateTransformer.swift in Sources */,
 				48F35A861E962F2500A4D4F1 /* ImageTransformers.swift in Sources */,
+				C4974DA11E9ADE0A00DA1DB2 /* LocalKeyTransformers.swift in Sources */,
 				48F35A8C1E96307200A4D4F1 /* StringTransformers.swift in Sources */,
 				48F35A981E96387D00A4D4F1 /* ArrayToStringTransformer.swift in Sources */,
 				48F35A941E9631B800A4D4F1 /* OrderedSetArrayValueTransformer.swift in Sources */,
@@ -306,7 +315,6 @@
 				480BE9271E954B84002295D1 /* ClosureValueTransformer.swift in Sources */,
 				48F35A921E96315A00A4D4F1 /* ArchiveValueTransformer.swift in Sources */,
 				48F35A821E962DE800A4D4F1 /* IdentityTransformer.swift in Sources */,
-				48F35A881E962FB800A4D4F1 /* ISO3166CountryValueTransformer.swift in Sources */,
 				48F35A9A1E9638B600A4D4F1 /* SecondsToHoursValueTransformer.swift in Sources */,
 				C4974D9F1E9ADB9C00DA1DB2 /* PercentTransformer.swift in Sources */,
 				C4974D9B1E9ABB8D00DA1DB2 /* ReverseValueTransformer.swift in Sources */,

@@ -14,7 +14,7 @@ public enum StringTransformers: String, ValueTransformers, ValueTransformerType 
     public static let transformers: [StringTransformers] = [.capitalized, .lowercased, .uppercased]
 
     public var name: NSValueTransformerName {
-        return NSValueTransformerName("StringTransformer" + self.rawValue.capitalized)
+        return NSValueTransformerName("String" + self.rawValue.capitalized)
     }
 
     public func transform(_ value: Any?) -> Any? {

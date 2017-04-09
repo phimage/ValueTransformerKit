@@ -18,7 +18,7 @@ public enum ImageToRepresentationTransformers: String, ValueTransformers, Resers
     public static var kJPEGRepresentationCompressionQuality: CGFloat = 0.85
 
     public var name: NSValueTransformerName {
-        return NSValueTransformerName("ImageRepresentationTransformer" + self.rawValue.capitalized)
+        return NSValueTransformerName("ImageRepresentation" + self.rawValue.capitalized)
     }
 
     public func transform(_ value: Any?) -> Any? {
@@ -48,7 +48,7 @@ public enum RepresentationToImageTransformers: String, ValueTransformers, Resers
     public static let transformers: [RepresentationToImageTransformers] = [.png, .jpeg]
 
     public var name: NSValueTransformerName {
-        return NSValueTransformerName("RepresentationToImageTransformer" + self.rawValue.capitalized)
+        return NSValueTransformerName("RepresentationToImage" + self.rawValue.capitalized)
     }
 
     // CLEAN factorize with the other transformer
