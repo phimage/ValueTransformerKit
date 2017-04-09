@@ -2,8 +2,8 @@
 //  ValueTransformerKit.h
 //  ValueTransformerKit
 //
-//  Created by Eric Marchand on 05/04/2017.
-//  Copyright © 2017 Eric Marchand. All rights reserved.
+//  Created by phimage on 05/04/2017.
+//  Copyright © 2017 phimage (Eric Marchand). All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -8,12 +8,69 @@
 
 /* Begin PBXBuildFile section */
 		480BE91C1E953CE3002295D1 /* ValueTransformerKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 480BE91A1E953CE3002295D1 /* ValueTransformerKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		480BE9271E954B84002295D1 /* ClosureValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480BE9261E954B84002295D1 /* ClosureValueTransformer.swift */; };
+		480BE9291E954E5D002295D1 /* DateTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480BE9281E954E5D002295D1 /* DateTransformer.swift */; };
+		48F35A791E962BEE00A4D4F1 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A781E962BEE00A4D4F1 /* Tests.swift */; };
+		48F35A7B1E962BEE00A4D4F1 /* ValueTransformerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 480BE9171E953CE3002295D1 /* ValueTransformerKit.framework */; };
+		48F35A821E962DE800A4D4F1 /* IdentityTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A811E962DE800A4D4F1 /* IdentityTransformer.swift */; };
+		48F35A841E962EA200A4D4F1 /* NumberToBoolTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A831E962EA200A4D4F1 /* NumberToBoolTransformer.swift */; };
+		48F35A861E962F2500A4D4F1 /* ImageTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A851E962F2500A4D4F1 /* ImageTransformers.swift */; };
+		48F35A881E962FB800A4D4F1 /* ISO3166CountryValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A871E962FB800A4D4F1 /* ISO3166CountryValueTransformer.swift */; };
+		48F35A8A1E962FF200A4D4F1 /* URLToStringTransFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A891E962FF200A4D4F1 /* URLToStringTransFormer.swift */; };
+		48F35A8C1E96307200A4D4F1 /* StringTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A8B1E96307200A4D4F1 /* StringTransformers.swift */; };
+		48F35A8E1E96310700A4D4F1 /* IsEmptyTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A8D1E96310700A4D4F1 /* IsEmptyTransformer.swift */; };
+		48F35A901E96313A00A4D4F1 /* URLStringToImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A8F1E96313A00A4D4F1 /* URLStringToImageTransformer.swift */; };
+		48F35A921E96315A00A4D4F1 /* ArchiveValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A911E96315A00A4D4F1 /* ArchiveValueTransformer.swift */; };
+		48F35A941E9631B800A4D4F1 /* OrderedSetArrayValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A931E9631B800A4D4F1 /* OrderedSetArrayValueTransformer.swift */; };
+		48F35A961E9637FC00A4D4F1 /* StringToDataTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A951E9637FC00A4D4F1 /* StringToDataTransformer.swift */; };
+		48F35A981E96387D00A4D4F1 /* ArrayToStringTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A971E96387D00A4D4F1 /* ArrayToStringTransformer.swift */; };
+		48F35A9A1E9638B600A4D4F1 /* SecondsToHoursValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A991E9638B600A4D4F1 /* SecondsToHoursValueTransformer.swift */; };
+		48F35A9C1E96390100A4D4F1 /* EmptyTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A9B1E96390100A4D4F1 /* EmptyTransformer.swift */; };
+		48F35A9E1E96398200A4D4F1 /* UIColorToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A9D1E96398200A4D4F1 /* UIColorToString.swift */; };
+		C4974D971E9A8F4600DA1DB2 /* JSONValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4974D961E9A8F4600DA1DB2 /* JSONValueTransformer.swift */; };
+		C4974D991E9AB76F00DA1DB2 /* ValueTransformerConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4974D981E9AB76F00DA1DB2 /* ValueTransformerConvertible.swift */; };
+		C4974D9B1E9ABB8D00DA1DB2 /* ReverseValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4974D9A1E9ABB8D00DA1DB2 /* ReverseValueTransformer.swift */; };
+		C4974D9F1E9ADB9C00DA1DB2 /* PercentTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4974D9E1E9ADB9C00DA1DB2 /* PercentTransformer.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		48F35A7C1E962BEE00A4D4F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 480BE90E1E953CE3002295D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 480BE9161E953CE3002295D1;
+			remoteInfo = ValueTransformerKit;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		480BE9171E953CE3002295D1 /* ValueTransformerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ValueTransformerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		480BE91A1E953CE3002295D1 /* ValueTransformerKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValueTransformerKit.h; sourceTree = "<group>"; };
 		480BE91B1E953CE3002295D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		480BE9261E954B84002295D1 /* ClosureValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureValueTransformer.swift; sourceTree = "<group>"; };
+		480BE9281E954E5D002295D1 /* DateTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTransformer.swift; sourceTree = "<group>"; };
+		48F35A761E962BEE00A4D4F1 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		48F35A781E962BEE00A4D4F1 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		48F35A7A1E962BEE00A4D4F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48F35A811E962DE800A4D4F1 /* IdentityTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentityTransformer.swift; sourceTree = "<group>"; };
+		48F35A831E962EA200A4D4F1 /* NumberToBoolTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberToBoolTransformer.swift; sourceTree = "<group>"; };
+		48F35A851E962F2500A4D4F1 /* ImageTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTransformers.swift; sourceTree = "<group>"; };
+		48F35A871E962FB800A4D4F1 /* ISO3166CountryValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISO3166CountryValueTransformer.swift; sourceTree = "<group>"; };
+		48F35A891E962FF200A4D4F1 /* URLToStringTransFormer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLToStringTransFormer.swift; sourceTree = "<group>"; };
+		48F35A8B1E96307200A4D4F1 /* StringTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTransformers.swift; sourceTree = "<group>"; };
+		48F35A8D1E96310700A4D4F1 /* IsEmptyTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsEmptyTransformer.swift; sourceTree = "<group>"; };
+		48F35A8F1E96313A00A4D4F1 /* URLStringToImageTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLStringToImageTransformer.swift; sourceTree = "<group>"; };
+		48F35A911E96315A00A4D4F1 /* ArchiveValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchiveValueTransformer.swift; sourceTree = "<group>"; };
+		48F35A931E9631B800A4D4F1 /* OrderedSetArrayValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedSetArrayValueTransformer.swift; sourceTree = "<group>"; };
+		48F35A951E9637FC00A4D4F1 /* StringToDataTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringToDataTransformer.swift; sourceTree = "<group>"; };
+		48F35A971E96387D00A4D4F1 /* ArrayToStringTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayToStringTransformer.swift; sourceTree = "<group>"; };
+		48F35A991E9638B600A4D4F1 /* SecondsToHoursValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondsToHoursValueTransformer.swift; sourceTree = "<group>"; };
+		48F35A9B1E96390100A4D4F1 /* EmptyTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyTransformer.swift; sourceTree = "<group>"; };
+		48F35A9D1E96398200A4D4F1 /* UIColorToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorToString.swift; sourceTree = "<group>"; };
+		C4974D961E9A8F4600DA1DB2 /* JSONValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONValueTransformer.swift; sourceTree = "<group>"; };
+		C4974D981E9AB76F00DA1DB2 /* ValueTransformerConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueTransformerConvertible.swift; sourceTree = "<group>"; };
+		C4974D9A1E9ABB8D00DA1DB2 /* ReverseValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReverseValueTransformer.swift; sourceTree = "<group>"; };
+		C4974D9E1E9ADB9C00DA1DB2 /* PercentTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentTransformer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,13 +81,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		48F35A731E962BEE00A4D4F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48F35A7B1E962BEE00A4D4F1 /* ValueTransformerKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		480BE90D1E953CE3002295D1 = {
 			isa = PBXGroup;
 			children = (
-				480BE9191E953CE3002295D1 /* ValueTransformerKit */,
+				480BE9221E953CF0002295D1 /* Sources */,
+				480BE9231E953D0A002295D1 /* Xcode */,
+				48F35A771E962BEE00A4D4F1 /* Tests */,
 				480BE9181E953CE3002295D1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -39,17 +106,79 @@
 			isa = PBXGroup;
 			children = (
 				480BE9171E953CE3002295D1 /* ValueTransformerKit.framework */,
+				48F35A761E962BEE00A4D4F1 /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		480BE9191E953CE3002295D1 /* ValueTransformerKit */ = {
+		480BE9191E953CE3002295D1 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				480BE91A1E953CE3002295D1 /* ValueTransformerKit.h */,
 				480BE91B1E953CE3002295D1 /* Info.plist */,
 			);
-			path = ValueTransformerKit;
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		480BE9221E953CF0002295D1 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C4974D981E9AB76F00DA1DB2 /* ValueTransformerConvertible.swift */,
+				48F35A811E962DE800A4D4F1 /* IdentityTransformer.swift */,
+				C4974D9A1E9ABB8D00DA1DB2 /* ReverseValueTransformer.swift */,
+				48F35A8D1E96310700A4D4F1 /* IsEmptyTransformer.swift */,
+				480BE9261E954B84002295D1 /* ClosureValueTransformer.swift */,
+				C4974D9C1E9ADAA500DA1DB2 /* Enum */,
+				C4974D9D1E9ADAD300DA1DB2 /* WIP */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		480BE9231E953D0A002295D1 /* Xcode */ = {
+			isa = PBXGroup;
+			children = (
+				480BE9191E953CE3002295D1 /* iOS */,
+			);
+			path = Xcode;
+			sourceTree = "<group>";
+		};
+		48F35A771E962BEE00A4D4F1 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				48F35A781E962BEE00A4D4F1 /* Tests.swift */,
+				48F35A7A1E962BEE00A4D4F1 /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		C4974D9C1E9ADAA500DA1DB2 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				48F35A8B1E96307200A4D4F1 /* StringTransformers.swift */,
+				48F35A851E962F2500A4D4F1 /* ImageTransformers.swift */,
+			);
+			name = Enum;
+			sourceTree = "<group>";
+		};
+		C4974D9D1E9ADAD300DA1DB2 /* WIP */ = {
+			isa = PBXGroup;
+			children = (
+				480BE9281E954E5D002295D1 /* DateTransformer.swift */,
+				48F35A971E96387D00A4D4F1 /* ArrayToStringTransformer.swift */,
+				48F35A911E96315A00A4D4F1 /* ArchiveValueTransformer.swift */,
+				48F35A951E9637FC00A4D4F1 /* StringToDataTransformer.swift */,
+				48F35A891E962FF200A4D4F1 /* URLToStringTransFormer.swift */,
+				48F35A8F1E96313A00A4D4F1 /* URLStringToImageTransformer.swift */,
+				48F35A931E9631B800A4D4F1 /* OrderedSetArrayValueTransformer.swift */,
+				48F35A991E9638B600A4D4F1 /* SecondsToHoursValueTransformer.swift */,
+				48F35A9B1E96390100A4D4F1 /* EmptyTransformer.swift */,
+				48F35A831E962EA200A4D4F1 /* NumberToBoolTransformer.swift */,
+				C4974D961E9A8F4600DA1DB2 /* JSONValueTransformer.swift */,
+				48F35A871E962FB800A4D4F1 /* ISO3166CountryValueTransformer.swift */,
+				48F35A9D1E96398200A4D4F1 /* UIColorToString.swift */,
+				C4974D9E1E9ADB9C00DA1DB2 /* PercentTransformer.swift */,
+			);
+			name = WIP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,16 +213,40 @@
 			productReference = 480BE9171E953CE3002295D1 /* ValueTransformerKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		48F35A751E962BEE00A4D4F1 /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48F35A801E962BEE00A4D4F1 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				48F35A721E962BEE00A4D4F1 /* Sources */,
+				48F35A731E962BEE00A4D4F1 /* Frameworks */,
+				48F35A741E962BEE00A4D4F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				48F35A7D1E962BEE00A4D4F1 /* PBXTargetDependency */,
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = 48F35A761E962BEE00A4D4F1 /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		480BE90E1E953CE3002295D1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Eric Marchand";
 				TargetAttributes = {
 					480BE9161E953CE3002295D1 = {
+						CreatedOnToolsVersion = 8.3;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+					48F35A751E962BEE00A4D4F1 = {
 						CreatedOnToolsVersion = 8.3;
 						ProvisioningStyle = Automatic;
 					};
@@ -112,12 +265,20 @@
 			projectRoot = "";
 			targets = (
 				480BE9161E953CE3002295D1 /* ValueTransformerKit */,
+				48F35A751E962BEE00A4D4F1 /* Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		480BE9151E953CE3002295D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48F35A741E962BEE00A4D4F1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -131,10 +292,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48F35A9C1E96390100A4D4F1 /* EmptyTransformer.swift in Sources */,
+				48F35A961E9637FC00A4D4F1 /* StringToDataTransformer.swift in Sources */,
+				48F35A901E96313A00A4D4F1 /* URLStringToImageTransformer.swift in Sources */,
+				480BE9291E954E5D002295D1 /* DateTransformer.swift in Sources */,
+				48F35A861E962F2500A4D4F1 /* ImageTransformers.swift in Sources */,
+				48F35A8C1E96307200A4D4F1 /* StringTransformers.swift in Sources */,
+				48F35A981E96387D00A4D4F1 /* ArrayToStringTransformer.swift in Sources */,
+				48F35A941E9631B800A4D4F1 /* OrderedSetArrayValueTransformer.swift in Sources */,
+				48F35A9E1E96398200A4D4F1 /* UIColorToString.swift in Sources */,
+				C4974D991E9AB76F00DA1DB2 /* ValueTransformerConvertible.swift in Sources */,
+				48F35A8E1E96310700A4D4F1 /* IsEmptyTransformer.swift in Sources */,
+				480BE9271E954B84002295D1 /* ClosureValueTransformer.swift in Sources */,
+				48F35A921E96315A00A4D4F1 /* ArchiveValueTransformer.swift in Sources */,
+				48F35A821E962DE800A4D4F1 /* IdentityTransformer.swift in Sources */,
+				48F35A881E962FB800A4D4F1 /* ISO3166CountryValueTransformer.swift in Sources */,
+				48F35A9A1E9638B600A4D4F1 /* SecondsToHoursValueTransformer.swift in Sources */,
+				C4974D9F1E9ADB9C00DA1DB2 /* PercentTransformer.swift in Sources */,
+				C4974D9B1E9ABB8D00DA1DB2 /* ReverseValueTransformer.swift in Sources */,
+				48F35A8A1E962FF200A4D4F1 /* URLToStringTransFormer.swift in Sources */,
+				48F35A841E962EA200A4D4F1 /* NumberToBoolTransformer.swift in Sources */,
+				C4974D971E9A8F4600DA1DB2 /* JSONValueTransformer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48F35A721E962BEE00A4D4F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48F35A791E962BEE00A4D4F1 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		48F35A7D1E962BEE00A4D4F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 480BE9161E953CE3002295D1 /* ValueTransformerKit */;
+			targetProxy = 48F35A7C1E962BEE00A4D4F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		480BE91D1E953CE3002295D1 /* Debug */ = {
@@ -241,17 +439,19 @@
 		480BE9201E953CE3002295D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ValueTransformerKit/Info.plist;
+				INFOPLIST_FILE = Xcode/iOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.ValueTransformerKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -259,17 +459,40 @@
 		480BE9211E953CE3002295D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ValueTransformerKit/Info.plist;
+				INFOPLIST_FILE = Xcode/iOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.ValueTransformerKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		48F35A7E1E962BEE00A4D4F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		48F35A7F1E962BEE00A4D4F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -293,6 +516,16 @@
 				480BE9211E953CE3002295D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48F35A801E962BEE00A4D4F1 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48F35A7E1E962BEE00A4D4F1 /* Debug */,
+				48F35A7F1E962BEE00A4D4F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
