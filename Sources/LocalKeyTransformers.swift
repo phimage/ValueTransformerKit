@@ -9,6 +9,8 @@ extension NSLocale.Key: ValueTransformers, ValueTransformerType {
 
     public static let transformers: [NSLocale.Key] = [.identifier, .languageCode, .countryCode, .scriptCode, .variantCode, .exemplarCharacterSet, .calendar, .collationIdentifier, .usesMetricSystem, .measurementSystem, .decimalSeparator, .groupingSeparator, .currencySymbol, .currencyCode, .collatorIdentifier, .quotationBeginDelimiterKey, .quotationEndDelimiterKey, .alternateQuotationBeginDelimiterKey, .alternateQuotationEndDelimiterKey]
 
+    public static var namePrefix = "Locale"
+
     public var name: NSValueTransformerName {
         var name = self.rawValue
         name = name.replacingOccurrences(of: "kCFLocale", with: "")
@@ -17,7 +19,7 @@ extension NSLocale.Key: ValueTransformers, ValueTransformerType {
         if self.rawValue == name {
             name = name.capitalized
         }
-        return NSValueTransformerName("Locale" + name)
+        return NSValueTransformerName(NSLocale.Key.namePrefix + name)
     }
  
     public func transform(_ value: Any?) -> Any? {

@@ -39,6 +39,27 @@ extension ValueTransformers {
 
 }
 
+public protocol ReversableValueTransformers: ValueTransformers {
+    
+    static func reversableName(from name: NSValueTransformerName) -> NSValueTransformerName
+
+}
+
+extension ReversableValueTransformers {
+    
+    public static func setValueTransformers() {
+        for transformer in transformers {
+            transformer.setValueTransformer()
+        }
+        for transformer in transformers {
+            let reverseTransfomers = ReverseValueTransformer(transformer: transformer.transformer)
+            let name = reversableName(from: transformer.name)
+            ValueTransformer.setValueTransformer(reverseTransfomers, forName: name)
+        }
+    }
+    
+}
+
 public protocol ValueTransformerType {
     func transform(_ value: Any?) -> Any?
 
@@ -51,7 +72,6 @@ extension ValueTransformerType {
 
 public protocol ResersableValueTransformerType: ValueTransformerType {
     func reverseTransform(_ value: Any?) -> Any?
-
 }
 
 extension ResersableValueTransformerType {

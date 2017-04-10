@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		480BE91C1E953CE3002295D1 /* ValueTransformerKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 480BE91A1E953CE3002295D1 /* ValueTransformerKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		480BE9271E954B84002295D1 /* ClosureValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480BE9261E954B84002295D1 /* ClosureValueTransformer.swift */; };
-		480BE9291E954E5D002295D1 /* DateTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480BE9281E954E5D002295D1 /* DateTransformer.swift */; };
+		480BE9291E954E5D002295D1 /* DateTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480BE9281E954E5D002295D1 /* DateTransformers.swift */; };
 		48F35A791E962BEE00A4D4F1 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A781E962BEE00A4D4F1 /* Tests.swift */; };
 		48F35A7B1E962BEE00A4D4F1 /* ValueTransformerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 480BE9171E953CE3002295D1 /* ValueTransformerKit.framework */; };
 		48F35A821E962DE800A4D4F1 /* IdentityTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A811E962DE800A4D4F1 /* IdentityTransformer.swift */; };
@@ -29,7 +29,7 @@
 		C4974D971E9A8F4600DA1DB2 /* JSONValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4974D961E9A8F4600DA1DB2 /* JSONValueTransformer.swift */; };
 		C4974D991E9AB76F00DA1DB2 /* ValueTransformerConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4974D981E9AB76F00DA1DB2 /* ValueTransformerConvertible.swift */; };
 		C4974D9B1E9ABB8D00DA1DB2 /* ReverseValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4974D9A1E9ABB8D00DA1DB2 /* ReverseValueTransformer.swift */; };
-		C4974D9F1E9ADB9C00DA1DB2 /* PercentTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4974D9E1E9ADB9C00DA1DB2 /* PercentTransformer.swift */; };
+		C4974D9F1E9ADB9C00DA1DB2 /* NumberTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4974D9E1E9ADB9C00DA1DB2 /* NumberTransformers.swift */; };
 		C4974DA11E9ADE0A00DA1DB2 /* LocalKeyTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4974DA01E9ADE0A00DA1DB2 /* LocalKeyTransformers.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +48,7 @@
 		480BE91A1E953CE3002295D1 /* ValueTransformerKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValueTransformerKit.h; sourceTree = "<group>"; };
 		480BE91B1E953CE3002295D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		480BE9261E954B84002295D1 /* ClosureValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureValueTransformer.swift; sourceTree = "<group>"; };
-		480BE9281E954E5D002295D1 /* DateTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTransformer.swift; sourceTree = "<group>"; };
+		480BE9281E954E5D002295D1 /* DateTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTransformers.swift; sourceTree = "<group>"; };
 		48F35A761E962BEE00A4D4F1 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48F35A781E962BEE00A4D4F1 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		48F35A7A1E962BEE00A4D4F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 		C4974D961E9A8F4600DA1DB2 /* JSONValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONValueTransformer.swift; sourceTree = "<group>"; };
 		C4974D981E9AB76F00DA1DB2 /* ValueTransformerConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueTransformerConvertible.swift; sourceTree = "<group>"; };
 		C4974D9A1E9ABB8D00DA1DB2 /* ReverseValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReverseValueTransformer.swift; sourceTree = "<group>"; };
-		C4974D9E1E9ADB9C00DA1DB2 /* PercentTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentTransformer.swift; sourceTree = "<group>"; };
+		C4974D9E1E9ADB9C00DA1DB2 /* NumberTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberTransformers.swift; sourceTree = "<group>"; };
 		C4974DA01E9ADE0A00DA1DB2 /* LocalKeyTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalKeyTransformers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,6 +158,8 @@
 				48F35A8B1E96307200A4D4F1 /* StringTransformers.swift */,
 				48F35A851E962F2500A4D4F1 /* ImageTransformers.swift */,
 				C4974DA01E9ADE0A00DA1DB2 /* LocalKeyTransformers.swift */,
+				C4974D9E1E9ADB9C00DA1DB2 /* NumberTransformers.swift */,
+				480BE9281E954E5D002295D1 /* DateTransformers.swift */,
 			);
 			name = Enum;
 			sourceTree = "<group>";
@@ -165,8 +167,6 @@
 		C4974D9D1E9ADAD300DA1DB2 /* WIP */ = {
 			isa = PBXGroup;
 			children = (
-				480BE9281E954E5D002295D1 /* DateTransformer.swift */,
-				C4974D9E1E9ADB9C00DA1DB2 /* PercentTransformer.swift */,
 				48F35A911E96315A00A4D4F1 /* ArchiveValueTransformer.swift */,
 				48F35A951E9637FC00A4D4F1 /* StringToDataTransformer.swift */,
 				48F35A891E962FF200A4D4F1 /* URLToStringTransFormer.swift */,
@@ -303,7 +303,7 @@
 				48F35A9C1E96390100A4D4F1 /* EmptyTransformer.swift in Sources */,
 				48F35A961E9637FC00A4D4F1 /* StringToDataTransformer.swift in Sources */,
 				48F35A901E96313A00A4D4F1 /* URLStringToImageTransformer.swift in Sources */,
-				480BE9291E954E5D002295D1 /* DateTransformer.swift in Sources */,
+				480BE9291E954E5D002295D1 /* DateTransformers.swift in Sources */,
 				48F35A861E962F2500A4D4F1 /* ImageTransformers.swift in Sources */,
 				C4974DA11E9ADE0A00DA1DB2 /* LocalKeyTransformers.swift in Sources */,
 				48F35A8C1E96307200A4D4F1 /* StringTransformers.swift in Sources */,
@@ -316,7 +316,7 @@
 				48F35A921E96315A00A4D4F1 /* ArchiveValueTransformer.swift in Sources */,
 				48F35A821E962DE800A4D4F1 /* IdentityTransformer.swift in Sources */,
 				48F35A9A1E9638B600A4D4F1 /* SecondsToHoursValueTransformer.swift in Sources */,
-				C4974D9F1E9ADB9C00DA1DB2 /* PercentTransformer.swift in Sources */,
+				C4974D9F1E9ADB9C00DA1DB2 /* NumberTransformers.swift in Sources */,
 				C4974D9B1E9ABB8D00DA1DB2 /* ReverseValueTransformer.swift in Sources */,
 				48F35A8A1E962FF200A4D4F1 /* URLToStringTransFormer.swift in Sources */,
 				48F35A841E962EA200A4D4F1 /* NumberToBoolTransformer.swift in Sources */,
