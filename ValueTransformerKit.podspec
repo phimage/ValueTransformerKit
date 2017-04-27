@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
                    Create `ValueTransformer` using closure or protocol implementations.
                    Or use one of the already implemented.
                    DESC
-  s.homepage     = "https://github.com/phimage/Prephirences"
+  s.homepage     = "https://github.com/phimage/ValueTransformer"
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.license      = "MIT"
@@ -19,10 +19,7 @@ Pod::Spec.new do |s|
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.ios.deployment_target = '10.0'
-  s.osx.deployment_target = '10.10'
-  s.watchos.deployment_target = '2.0'
-  s.tvos.deployment_target = '9.0'
-
+  s.osx.deployment_target = '10.11'
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.source       = { :git => "https://github.com/phimage/ValueTransformerKit.git", :tag => s.version }
 

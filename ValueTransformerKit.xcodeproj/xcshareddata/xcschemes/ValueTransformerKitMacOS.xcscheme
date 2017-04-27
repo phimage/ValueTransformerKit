@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "486545DD1EB0CA1300D3ECCC"
-               BuildableName = "ValueTransformerKitMacOS.framework"
+               BuildableName = "ValueTransfomerKit.framework"
                BlueprintName = "ValueTransformerKitMacOS"
                ReferencedContainer = "container:ValueTransformerKit.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "486545DD1EB0CA1300D3ECCC"
-            BuildableName = "ValueTransformerKitMacOS.framework"
+            BuildableName = "ValueTransfomerKit.framework"
             BlueprintName = "ValueTransformerKitMacOS"
             ReferencedContainer = "container:ValueTransformerKit.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "486545DD1EB0CA1300D3ECCC"
-            BuildableName = "ValueTransformerKitMacOS.framework"
+            BuildableName = "ValueTransfomerKit.framework"
             BlueprintName = "ValueTransformerKitMacOS"
             ReferencedContainer = "container:ValueTransformerKit.xcodeproj">
          </BuildableReference>
