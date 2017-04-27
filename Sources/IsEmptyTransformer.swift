@@ -6,7 +6,11 @@
 import Foundation
 
 /// Transform to Boolean by checking if empty
-open class IsEmptyTransformer: ValueTransformer {
+@objc(IsEmptyTransformer)
+final public class IsEmptyTransformer: ValueTransformer, ValueTransformerRegisterable, ValueTransformerSingleton {
+
+    open var name = NSValueTransformerName(rawValue: "IsEmpty")
+    public static let instance = IsEmptyTransformer()
 
     open override class func allowsReverseTransformation() -> Bool {
         return false
@@ -19,10 +23,18 @@ open class IsEmptyTransformer: ValueTransformer {
         return object.isEmpty
     }
 
+    public override var reverse: ValueTransformer {
+        return IsNotEmptyTransformer.instance
+    }
+
 }
 
 /// Transform to Boolean by checking if not empty
-open class IsNotEmptyTransformer: ValueTransformer {
+@objc(IsNotEmptyTransformer)
+final public class IsNotEmptyTransformer: ValueTransformer, ValueTransformerRegisterable, ValueTransformerSingleton {
+
+    open var name = NSValueTransformerName(rawValue: "IsNotEmpty")
+    public static let instance = IsNotEmptyTransformer()
 
     open override class func allowsReverseTransformation() -> Bool {
         return false
@@ -33,6 +45,10 @@ open class IsNotEmptyTransformer: ValueTransformer {
             return false
         }
         return !object.isEmpty
+    }
+
+    public override var reverse: ValueTransformer {
+        return IsEmptyTransformer.instance
     }
 
 }
@@ -52,7 +68,6 @@ extension Optional where Wrapped: Emptyable {
         switch self {
         case .some(let wrapped):
             return wrapped.isEmpty
-
         case .none:
             return true
         }

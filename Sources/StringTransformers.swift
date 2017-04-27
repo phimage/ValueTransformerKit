@@ -14,12 +14,12 @@ public enum StringTransformers: String, ValueTransformers, ValueTransformerType 
     public static let transformers: [StringTransformers] = [.capitalized, .lowercased, .uppercased]
 
     public static var namePrefix = "String"
-    
+
     public var name: NSValueTransformerName {
         return NSValueTransformerName(StringTransformers.namePrefix + self.rawValue.capitalized)
     }
 
-    public func transform(_ value: Any?) -> Any? {
+    public func transformedValue(_ value: Any?) -> Any? {
         guard let string = value as? String else {
             return nil
         }

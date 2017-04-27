@@ -7,7 +7,10 @@ import Foundation
 
 /// Identity transformer do return the value without applying any transformation
 @objc(IdentityTransformer)
-open class IdentityTransformer: ValueTransformer {
+final public class IdentityTransformer: ValueTransformer, ValueTransformerRegisterable, ValueTransformerSingleton {
+
+    open var name = NSValueTransformerName(rawValue: "Identity")
+    public static let instance = IdentityTransformer()
 
     open override class func transformedValueClass() -> AnyClass {
         return NSObject.self
@@ -25,4 +28,11 @@ open class IdentityTransformer: ValueTransformer {
         return value
     }
 
+}
+
+extension ValueTransformer {
+    /// Identity transformer do return the value without applying any transformation
+    public static var identity: IdentityTransformer {
+        return IdentityTransformer.instance
+    }
 }

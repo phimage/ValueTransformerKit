@@ -5,12 +5,14 @@
 
 import Foundation
 
+/// Reverse the transformation of one `ValueTransformer`
+/// `allowsReverseTransformation` must return true
 open class ReverseValueTransformer: ValueTransformer {
 
-    let transformer: ValueTransformer
+    let toReverse: ValueTransformer
 
     public init(transformer: ValueTransformer) {
-        self.transformer = transformer
+        self.toReverse = transformer
         assert(transformer.classForCoder.allowsReverseTransformation())
     }
 
@@ -19,11 +21,20 @@ open class ReverseValueTransformer: ValueTransformer {
     }
 
     open override func transformedValue(_ value: Any?) -> Any? {
-        return transformer.reverseTransformedValue(value)
+        return toReverse.reverseTransformedValue(value)
     }
 
     open override func reverseTransformedValue(_ value: Any?) -> Any? {
-        return transformer.transformedValue(value)
+        return toReverse.transformedValue(value)
+    }
+
+}
+
+extension ValueTransformer {
+
+    /// Return the reverse value transformer. `allowsReverseTransformation` must return true
+    public var reverse: ValueTransformer {
+        return ReverseValueTransformer(transformer: self)
     }
 
 }

@@ -5,6 +5,7 @@
 
 import Foundation
 
+#if os(iOS) || os(tvOS) || os(watchOS)
 import UIKit
 
 class UIColorToNSString: ValueTransformer {
@@ -60,3 +61,5 @@ class UIColorToNSString: ValueTransformer {
         return nil
     }
 }
+
+#endif

@@ -6,14 +6,17 @@
 //  Copyright © 2017 phimage (Eric Marchand). All rights reserved.
 //
 
+#if os(iOS) || os(tvOS) || os(watchOS)
 import UIKit
-// TODO make for Cocoa
-public enum ImageToRepresentationTransformers: String, ReversableValueTransformers, ResersableValueTransformerType {
+
+// TODO make ImageTransformer for Cocoa
+
+public enum ImageRepresentationTransformers: String, ReversableValueTransformers, ResersableValueTransformerType {
 
     case png
     case jpeg
 
-    public static let transformers: [ImageToRepresentationTransformers] = [.png, .jpeg]
+    public static let transformers: [ImageRepresentationTransformers] = [.png, .jpeg]
 
     public static var kJPEGRepresentationCompressionQuality: CGFloat = 0.85
 
@@ -21,20 +24,20 @@ public enum ImageToRepresentationTransformers: String, ReversableValueTransforme
     public static var reversableNamePrefix = "RepresentationToImage"
 
     public var name: NSValueTransformerName {
-        return NSValueTransformerName(ImageToRepresentationTransformers.namePrefix + self.rawValue.capitalized)
+        return NSValueTransformerName(ImageRepresentationTransformers.namePrefix + self.rawValue.capitalized)
     }
 
-    public func transform(_ value: Any?) -> Any? {
+    public func transformedValue(_ value: Any?) -> Any? {
         guard let image = value as? UIImage else {
             return nil
         }
         switch self {
         case .png: return UIImagePNGRepresentation(image)
-        case .jpeg: return UIImageJPEGRepresentation(image, ImageToRepresentationTransformers.kJPEGRepresentationCompressionQuality)
+        case .jpeg: return UIImageJPEGRepresentation(image, ImageRepresentationTransformers.kJPEGRepresentationCompressionQuality)
         }
     }
 
-    public func reverseTransform(_ value: Any?) -> Any? {
+    public func reverseTransformedValue(_ value: Any?) -> Any? {
         guard let data = value as? Data else {
             return nil
         }
@@ -42,8 +45,9 @@ public enum ImageToRepresentationTransformers: String, ReversableValueTransforme
     }
 
     public static func reversableName(from name: NSValueTransformerName) -> NSValueTransformerName {
-        let newName = name.rawValue.replacingOccurrences(of: ImageToRepresentationTransformers.namePrefix, with: ImageToRepresentationTransformers.reversableNamePrefix)
+        let newName = name.rawValue.replacingOccurrences(of: ImageRepresentationTransformers.namePrefix, with: ImageRepresentationTransformers.reversableNamePrefix)
         return NSValueTransformerName(newName)
     }
 
 }
+#endif

@@ -5,7 +5,13 @@
 
 import Foundation
 
-open class ArrayToStringTransformer: ValueTransformer {
+final public class ArrayToStringTransformer: ValueTransformer, ValueTransformerRegisterable, ValueTransformerSingleton, ReversableValueTransformers {
+
+    public static var namePrefix = "ArrayToString"
+    public static var reversableNamePrefix = "StringToArray"
+
+    open var name = NSValueTransformerName(rawValue: ArrayToStringTransformer.namePrefix)
+    public static let instance = ArrayToStringTransformer()
 
     let separator: String
 
@@ -33,6 +39,10 @@ open class ArrayToStringTransformer: ValueTransformer {
             return nil
         }
         return randomString.components(separatedBy: separator)
+    }
+
+    public static func reversableName(from name: NSValueTransformerName) -> NSValueTransformerName {
+        return NSValueTransformerName(ArrayToStringTransformer.reversableNamePrefix)
     }
 
 }

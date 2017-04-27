@@ -5,7 +5,6 @@
 
 import Foundation
 
-// MARK: - Builder
 extension ValueTransformer {
 
     public class func closure(forwardTransformer: @escaping ClosureValueTransformer.ForwardTransformer) -> ClosureValueTransformer {

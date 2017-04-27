@@ -4,6 +4,8 @@
 //
 
 import Foundation
+
+#if os(iOS) || os(tvOS) || os(watchOS)
 class URLStringToImageTransformer: ValueTransformer {
 
     override class func transformedValueClass() -> AnyClass {
@@ -15,6 +17,7 @@ class URLStringToImageTransformer: ValueTransformer {
             return nil
         }
 
-        return UIImage(contentsOfFile: value)
+        return UIImage(contentsOfFile: value) // add Bundle?
     }
 }
+#endif

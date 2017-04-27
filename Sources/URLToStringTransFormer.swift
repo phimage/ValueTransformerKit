@@ -8,7 +8,7 @@ import Foundation
 open class URLToStringTransFormer: ValueTransformer {
 
     open override class func transformedValueClass() -> AnyClass {
-        return String.self as! AnyClass
+        return NSString.self
     }
 
     open override class func allowsReverseTransformation() -> Bool {

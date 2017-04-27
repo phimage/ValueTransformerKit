@@ -9,7 +9,7 @@
 import Foundation
 
 public enum NumberTransformers: String, ReversableValueTransformers, ResersableValueTransformerType {
-    
+
     case none
     case decimal
     case currency
@@ -20,9 +20,9 @@ public enum NumberTransformers: String, ReversableValueTransformers, ResersableV
     case currencyISOCode
     case currencyPlural
     case currencyAccounting
-    
+
     public static let transformers: [NumberTransformers] = [.none, .decimal, .currency, .percent, .scientific, .spellOut, .ordinal, .currencyISOCode, .currencyPlural, .currencyAccounting]
-    
+
     public static var namePrefix = "Number"
     public static var reversableNamePrefix = "StringToNumber"
 
@@ -66,14 +66,14 @@ public enum NumberTransformers: String, ReversableValueTransformers, ResersableV
         return NSValueTransformerName(NumberTransformers.namePrefix + self.rawValue.capitalized)
     }
 
-    public func transform(_ value: Any?) -> Any? {
+    public func transformedValue(_ value: Any?) -> Any? {
         guard let number = value as? NSNumber else {
             return nil
         }
         return formatter.string(for: number)
     }
-    
-    public func reverseTransform(_ value: Any?) -> Any? {
+
+    public func reverseTransformedValue(_ value: Any?) -> Any? {
         guard let string = value as? String else {
             return nil
         }
@@ -88,25 +88,25 @@ public enum NumberTransformers: String, ReversableValueTransformers, ResersableV
 }
 
 fileprivate extension NumberFormatter {
-    
+
     static let none: NumberFormatter  = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .none
         return formatter
     }()
-    
+
     static let decimal: NumberFormatter  = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         return formatter
     }()
-    
+
     static let currency: NumberFormatter  = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         return formatter
     }()
-    
+
     static let scientific: NumberFormatter  = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .scientific
@@ -118,35 +118,35 @@ fileprivate extension NumberFormatter {
         formatter.numberStyle = .percent
         return formatter
     }()
-    
+
     static let spellOut: NumberFormatter  = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .spellOut
         return formatter
     }()
-    
+
     static let ordinal: NumberFormatter  = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .ordinal
         return formatter
     }()
-    
+
     static let currencyISOCode: NumberFormatter  = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currencyISOCode
         return formatter
     }()
-    
+
     static let currencyPlural: NumberFormatter  = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currencyPlural
         return formatter
     }()
-    
+
     static let currencyAccounting: NumberFormatter  = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currencyAccounting
         return formatter
     }()
-    
+
 }

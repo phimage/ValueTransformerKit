@@ -7,7 +7,12 @@ import Foundation
 
 extension NSLocale.Key: ValueTransformers, ValueTransformerType {
 
-    public static let transformers: [NSLocale.Key] = [.identifier, .languageCode, .countryCode, .scriptCode, .variantCode, .exemplarCharacterSet, .calendar, .collationIdentifier, .usesMetricSystem, .measurementSystem, .decimalSeparator, .groupingSeparator, .currencySymbol, .currencyCode, .collatorIdentifier, .quotationBeginDelimiterKey, .quotationEndDelimiterKey, .alternateQuotationBeginDelimiterKey, .alternateQuotationEndDelimiterKey]
+    public static let transformers: [NSLocale.Key] = [
+        .identifier, .languageCode, .countryCode, .scriptCode, .variantCode, .exemplarCharacterSet,
+        .calendar, .collationIdentifier, .usesMetricSystem, .measurementSystem, .decimalSeparator,
+        .groupingSeparator, .currencySymbol, .currencyCode, .collatorIdentifier, .quotationBeginDelimiterKey,
+        .quotationEndDelimiterKey, .alternateQuotationBeginDelimiterKey, .alternateQuotationEndDelimiterKey
+    ]
 
     public static var namePrefix = "Locale"
 
@@ -15,14 +20,14 @@ extension NSLocale.Key: ValueTransformers, ValueTransformerType {
         var name = self.rawValue
         name = name.replacingOccurrences(of: "kCFLocale", with: "")
         name = name.replacingOccurrences(of: "Key", with: "")
-        
+
         if self.rawValue == name {
             name = name.capitalized
         }
         return NSValueTransformerName(NSLocale.Key.namePrefix + name)
     }
- 
-    public func transform(_ value: Any?) -> Any? {
+
+    public func transformedValue(_ value: Any?) -> Any? {
         guard let string = value as? String else {
             return nil
         }

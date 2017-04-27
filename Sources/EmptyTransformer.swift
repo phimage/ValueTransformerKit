@@ -28,6 +28,7 @@ open class EmptyStringTransformer: ValueTransformer {
 
 }
 
+/// Replace all nil object to a new object created using `initClosure`
 open class EmptyTransformer: ValueTransformer {
 
     var initClosure: () -> Any

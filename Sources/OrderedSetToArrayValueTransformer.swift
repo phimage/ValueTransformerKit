@@ -6,8 +6,14 @@
 import Foundation
 
 // allow to bind with nsarraycontroller
-@objc(OrderedSetArrayValueTransformer)
-open class OrderedSetArrayValueTransformer: ValueTransformer {
+@objc(OrderedSetToArrayValueTransformer)
+final public class OrderedSetToArrayValueTransformer: ValueTransformer, ValueTransformerRegisterable, ValueTransformerSingleton, ReversableValueTransformers {
+
+    public static var namePrefix = "OrderedSetToArray"
+    public static var reversableNamePrefix = "ArrayToOrderedSet"
+
+    open var name = NSValueTransformerName(rawValue: OrderedSetToArrayValueTransformer.namePrefix)
+    public static let instance = OrderedSetToArrayValueTransformer()
 
     open override class func transformedValueClass() -> AnyClass {
         return NSArray.self
@@ -29,6 +35,10 @@ open class OrderedSetArrayValueTransformer: ValueTransformer {
             return nil
         }
         return NSOrderedSet(array: array)
+    }
+
+    public static func reversableName(from name: NSValueTransformerName) -> NSValueTransformerName {
+        return NSValueTransformerName(OrderedSetToArrayValueTransformer.reversableNamePrefix)
     }
 
 }
