@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
                    Create `ValueTransformer` using closure or protocol implementations.
                    Or use one of the already implemented.
                    DESC
-  s.homepage     = "https://github.com/phimage/ValueTransformer"
+  s.homepage     = "https://github.com/phimage/ValueTransformerKit"
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.license      = "MIT"
