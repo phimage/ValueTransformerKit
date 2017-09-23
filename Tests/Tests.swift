@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import ValueTransformerKit
+@testable import ValueTransformerKit
 
 class Tests: XCTestCase {
     
@@ -50,6 +50,10 @@ class Tests: XCTestCase {
         expected = expected + TimeTransformers.transformers.count * 2
         XCTAssertEqual(expected, count)
 
+        String.Encoding.register()
+        expected = expected + String.Encoding.transformers.count /* 2, no reverse, auto reverse */
+        XCTAssertEqual(expected, count)
+        
         // Singleton
  
         ArrayToStringTransformer.register()
@@ -71,7 +75,18 @@ class Tests: XCTestCase {
         IsNotEmptyTransformer.register()
         expected = expected + 1
         XCTAssertEqual(expected, count)
-
+        
+        ArrayStringJSONValueTransformer().register()
+        expected = expected + 1
+        XCTAssertEqual(expected, count)
+        
+        JSONValueTransformer<TestObject>().register()
+        expected = expected + 1
+        XCTAssertEqual(expected, count)
+        
+        PropertyListTransformer<TestObject>().register()
+        expected = expected + 1
+        XCTAssertEqual(expected, count)
 
         testValueTransformerByName()
     }
@@ -221,6 +236,100 @@ class Tests: XCTestCase {
         let transformed = transformer.transformedValue(nil)
         XCTAssertEqual(transformed as? String, valueForNil)
     }
+    
+    func testJSONStringArray() {
+        let array = ["ewrwer", "value", "aeae", "test"]
+        
+        let transformer = ArrayStringJSONValueTransformer()
+        
+        let data = transformer.transformedValue(array)
+        XCTAssertNotNil(data)
+        XCTAssertNotNil(data as? Data)
+
+        var value = transformer.reverseTransformedValue(data)
+        XCTAssertNotNil(value)
+        XCTAssertNotNil(value as? [String])
+        if let va = value as? [String] {
+            XCTAssertEqual(va, array)
+        }
+        
+        let stringTransformer = transformer.with(encoding: .utf8)
+        let string = stringTransformer.transformedValue(array)
+        XCTAssertNotNil(string)
+        XCTAssertNotNil(string as? String)
+        
+        value = stringTransformer.reverseTransformedValue(string)
+        XCTAssertNotNil(value)
+        XCTAssertNotNil(value as? [String])
+        if let va = value as? [String] {
+            XCTAssertEqual(va, array)
+        }
+    }
+    
+    
+    func testJSONStruc() {
+        let object = TestObject(string: "string", integer: 5)
+        
+        let transformer = JSONValueTransformer<TestObject>()
+        
+        let data = transformer.transformedValue(object)
+        XCTAssertNotNil(data)
+        XCTAssertNotNil(data as? Data)
+        
+        var value = transformer.reverseTransformedValue(data)
+        XCTAssertNotNil(value)
+        XCTAssertNotNil(value as? TestObject)
+        if let va = value as? TestObject {
+            XCTAssertEqual(va, object)
+        }
+        
+        let stringTransformer = transformer.with(encoding: .utf8)
+        let string = stringTransformer.transformedValue(object)
+        XCTAssertNotNil(string)
+        XCTAssertNotNil(string as? String)
+        
+        value = stringTransformer.reverseTransformedValue(string)
+        XCTAssertNotNil(value)
+        XCTAssertNotNil(value as? TestObject)
+        if let va = value as? TestObject {
+            XCTAssertEqual(va, object)
+        }
+    }
+
+    func testCoumpound() {
+        let stringTransformer: CompoundValueTransformer = [ArrayStringJSONValueTransformer(), String.Encoding.utf8.transformer]
+        let array = ["ewrwer", "value", "aeae", "test"]
+        let string = stringTransformer.transformedValue(array)
+        let value = stringTransformer.reverseTransformedValue(string)
+        if let va = value as? [String] {
+            XCTAssertEqual(va, array)
+        } else {
+            XCTFail()
+        }
+    }
+    
+    func testOperator() {
+        let stringTransformer = ArrayStringJSONValueTransformer() + String.Encoding.utf8.transformer
+       
+        let array: [String] = ["ewrwer", "value", "aeae", "test"]
+        let string = stringTransformer.transformedValue(array) as? String
+        let value = stringTransformer.reverseTransformedValue(string)
+        if let value = value as? [String] {
+            XCTAssertEqual(value, array)
+        } else {
+            XCTFail()
+        }
+
+        let newString: String? = array *> stringTransformer
+        XCTAssertEqual(newString, string)
+        
+        let newArray: [String]? = stringTransformer <* newString
+        if let newArray = newArray {
+            XCTAssertEqual(newArray, array)
+        } else {
+            XCTFail()
+        }
+    }
 
     func _testImageRepresentationTransformers() {
         XCTFail("not implemented")
@@ -238,3 +347,14 @@ class Tests: XCTestCase {
         XCTFail("not implemented")
     }
 }
+
+struct TestObject: Codable, Equatable {
+    var string: String
+    var integer: Int
+
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        return lhs.string == rhs.string && lhs.integer == rhs.integer
+    }
+
+}
+

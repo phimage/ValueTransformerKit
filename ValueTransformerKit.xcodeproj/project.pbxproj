@@ -54,6 +54,10 @@
 		48F35A9A1E9638B600A4D4F1 /* SecondsToHoursValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A991E9638B600A4D4F1 /* SecondsToHoursValueTransformer.swift */; };
 		48F35A9C1E96390100A4D4F1 /* EmptyTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A9B1E96390100A4D4F1 /* EmptyTransformer.swift */; };
 		48F35A9E1E96398200A4D4F1 /* UIColorToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A9D1E96398200A4D4F1 /* UIColorToString.swift */; };
+		C45979711F763AE9002C1206 /* PropertyListTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45979701F763AE9002C1206 /* PropertyListTransformer.swift */; };
+		C45979721F763AE9002C1206 /* PropertyListTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45979701F763AE9002C1206 /* PropertyListTransformer.swift */; };
+		C45979741F763B42002C1206 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45979731F763B42002C1206 /* Operators.swift */; };
+		C45979751F763B42002C1206 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45979731F763B42002C1206 /* Operators.swift */; };
 		C4974D971E9A8F4600DA1DB2 /* JSONValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4974D961E9A8F4600DA1DB2 /* JSONValueTransformer.swift */; };
 		C4974D991E9AB76F00DA1DB2 /* ValueTransformerRegisterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4974D981E9AB76F00DA1DB2 /* ValueTransformerRegisterable.swift */; };
 		C4974D9B1E9ABB8D00DA1DB2 /* ReverseValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4974D9A1E9ABB8D00DA1DB2 /* ReverseValueTransformer.swift */; };
@@ -100,6 +104,8 @@
 		48F35A991E9638B600A4D4F1 /* SecondsToHoursValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondsToHoursValueTransformer.swift; sourceTree = "<group>"; };
 		48F35A9B1E96390100A4D4F1 /* EmptyTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyTransformer.swift; sourceTree = "<group>"; };
 		48F35A9D1E96398200A4D4F1 /* UIColorToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorToString.swift; sourceTree = "<group>"; };
+		C45979701F763AE9002C1206 /* PropertyListTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListTransformer.swift; sourceTree = "<group>"; };
+		C45979731F763B42002C1206 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		C4974D961E9A8F4600DA1DB2 /* JSONValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONValueTransformer.swift; sourceTree = "<group>"; };
 		C4974D981E9AB76F00DA1DB2 /* ValueTransformerRegisterable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueTransformerRegisterable.swift; sourceTree = "<group>"; };
 		C4974D9A1E9ABB8D00DA1DB2 /* ReverseValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReverseValueTransformer.swift; sourceTree = "<group>"; };
@@ -171,7 +177,11 @@
 				48F35A8D1E96310700A4D4F1 /* IsEmptyTransformer.swift */,
 				48F35A911E96315A00A4D4F1 /* ArchiveValueTransformer.swift */,
 				480BE9261E954B84002295D1 /* ClosureValueTransformer.swift */,
+				C4974D961E9A8F4600DA1DB2 /* JSONValueTransformer.swift */,
+				C45979701F763AE9002C1206 /* PropertyListTransformer.swift */,
 				48F35A9B1E96390100A4D4F1 /* EmptyTransformer.swift */,
+				48F35A951E9637FC00A4D4F1 /* StringToDataTransformer.swift */,
+				C45979731F763B42002C1206 /* Operators.swift */,
 				C4974D9C1E9ADAA500DA1DB2 /* Enum */,
 				C4974DA21E9ADF0B00DA1DB2 /* Array */,
 				C4974D9D1E9ADAD300DA1DB2 /* WIP */,
@@ -232,11 +242,9 @@
 		C4974D9D1E9ADAD300DA1DB2 /* WIP */ = {
 			isa = PBXGroup;
 			children = (
-				48F35A951E9637FC00A4D4F1 /* StringToDataTransformer.swift */,
 				48F35A891E962FF200A4D4F1 /* URLToStringTransFormer.swift */,
 				48F35A991E9638B600A4D4F1 /* SecondsToHoursValueTransformer.swift */,
 				48F35A831E962EA200A4D4F1 /* NumberToBoolTransformer.swift */,
-				C4974D961E9A8F4600DA1DB2 /* JSONValueTransformer.swift */,
 				48F35A8F1E96313A00A4D4F1 /* URLStringToImageTransformer.swift */,
 				48F35A9D1E96398200A4D4F1 /* UIColorToString.swift */,
 			);
@@ -336,7 +344,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Eric Marchand";
 				TargetAttributes = {
 					480BE9161E953CE3002295D1 = {
@@ -346,10 +354,12 @@
 					};
 					486545DD1EB0CA1300D3ECCC = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					48F35A751E962BEE00A4D4F1 = {
 						CreatedOnToolsVersion = 8.3;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -428,6 +438,7 @@
 				48F35A8C1E96307200A4D4F1 /* StringTransformers.swift in Sources */,
 				486546021EB0D17100D3ECCC /* ValueTransformerType.swift in Sources */,
 				48F35A981E96387D00A4D4F1 /* ArrayToStringTransformer.swift in Sources */,
+				C45979741F763B42002C1206 /* Operators.swift in Sources */,
 				48F35A941E9631B800A4D4F1 /* OrderedSetToArrayValueTransformer.swift in Sources */,
 				48F35A9E1E96398200A4D4F1 /* UIColorToString.swift in Sources */,
 				C4974D991E9AB76F00DA1DB2 /* ValueTransformerRegisterable.swift in Sources */,
@@ -441,6 +452,7 @@
 				C4974D9B1E9ABB8D00DA1DB2 /* ReverseValueTransformer.swift in Sources */,
 				486545D71EB0C58A00D3ECCC /* TimeTransformers.swift in Sources */,
 				48F35A8A1E962FF200A4D4F1 /* URLToStringTransFormer.swift in Sources */,
+				C45979711F763AE9002C1206 /* PropertyListTransformer.swift in Sources */,
 				48F35A841E962EA200A4D4F1 /* NumberToBoolTransformer.swift in Sources */,
 				C4974D971E9A8F4600DA1DB2 /* JSONValueTransformer.swift in Sources */,
 			);
@@ -459,6 +471,7 @@
 				486545FA1EB0CA2D00D3ECCC /* JSONValueTransformer.swift in Sources */,
 				486546031EB0D17100D3ECCC /* ValueTransformerType.swift in Sources */,
 				486545F61EB0CA2D00D3ECCC /* URLStringToImageTransformer.swift in Sources */,
+				C45979751F763B42002C1206 /* Operators.swift in Sources */,
 				486545F11EB0CA2A00D3ECCC /* OrderedSetToArrayValueTransformer.swift in Sources */,
 				486545E71EB0CA2400D3ECCC /* IdentityTransformer.swift in Sources */,
 				486545E81EB0CA2400D3ECCC /* ReverseValueTransformer.swift in Sources */,
@@ -472,6 +485,7 @@
 				486545EA1EB0CA2400D3ECCC /* ClosureValueTransformer.swift in Sources */,
 				486545ED1EB0CA2700D3ECCC /* LocalKeyTransformers.swift in Sources */,
 				486545F41EB0CA2D00D3ECCC /* StringToDataTransformer.swift in Sources */,
+				C45979721F763AE9002C1206 /* PropertyListTransformer.swift in Sources */,
 				486545EF1EB0CA2700D3ECCC /* DateTransformers.swift in Sources */,
 				486545F91EB0CA2D00D3ECCC /* NumberToBoolTransformer.swift in Sources */,
 			);
@@ -506,7 +520,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -514,7 +530,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -560,7 +580,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -568,7 +590,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -613,7 +639,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -632,7 +658,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.ValueTransformerKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -654,7 +680,8 @@
 				PRODUCT_NAME = ValueTransfomerKit;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -676,7 +703,8 @@
 				PRODUCT_NAME = ValueTransfomerKit;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -687,7 +715,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -698,7 +727,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -730,6 +760,7 @@
 				486545E51EB0CA1300D3ECCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		48F35A801E962BEE00A4D4F1 /* Build configuration list for PBXNativeTarget "Tests" */ = {
 			isa = XCConfigurationList;

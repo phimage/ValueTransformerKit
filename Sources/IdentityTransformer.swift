@@ -36,3 +36,11 @@ extension ValueTransformer {
         return IdentityTransformer.instance
     }
 }
+
+extension IdentityTransformer: ValueTransformerReversable {
+
+    public var reverseInstance: ValueTransformer {
+        return self
+    }
+
+}

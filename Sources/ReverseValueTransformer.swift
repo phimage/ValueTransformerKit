@@ -30,10 +30,17 @@ open class ReverseValueTransformer: ValueTransformer {
 
 }
 
+public protocol ValueTransformerReversable {
+    var reverseInstance: ValueTransformer {get}
+}
+
 extension ValueTransformer {
 
     /// Return the reverse value transformer. `allowsReverseTransformation` must return true
     public var reverse: ValueTransformer {
+        if let reversable = self as? ValueTransformerReversable {
+            return reversable.reverseInstance
+        }
         return ReverseValueTransformer(transformer: self)
     }
 

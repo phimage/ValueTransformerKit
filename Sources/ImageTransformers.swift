@@ -7,9 +7,38 @@
 //
 
 #if os(iOS) || os(tvOS) || os(watchOS)
-import UIKit
+    import UIKit
+    typealias ValueImage = UIImage
 
-// TODO make ImageTransformer for Cocoa
+      func ImagePNGRepresentation(_ image: ValueImage) -> Data? {
+        return UIImagePNGRepresentation(image)
+    }
+
+    func ImageJPEGRepresentation(_ image: ValueImage, _ compressionFactor: CGFloat) -> Data? {
+        return UIImageJPEGRepresentation(image, compressionFactor)
+    }
+
+#elseif os(macOS)
+    import Cocoa
+    typealias ValueImage = NSImage
+
+    extension NSBitmapImageRep {
+        var png: Data? { return representation(using: .png, properties: [:]) }
+        func jpeg(compressionFactor: CGFloat) -> Data? {
+            return representation(using: .jpeg, properties: [NSBitmapImageRep.PropertyKey.compressionFactor: compressionFactor])
+        }
+    }
+    extension Data {
+        var bitmap: NSBitmapImageRep? { return NSBitmapImageRep(data: self) }
+    }
+    func ImagePNGRepresentation(_ image: ValueImage) -> Data? {
+        return image.tiffRepresentation?.bitmap?.png
+    }
+
+    func ImageJPEGRepresentation(_ image: ValueImage, _ compressionFactor: CGFloat) -> Data? {
+        return image.tiffRepresentation?.bitmap?.jpeg(compressionFactor: compressionFactor)
+    }
+#endif
 
 public enum ImageRepresentationTransformers: String, ReversableValueTransformers, ResersableValueTransformerType {
 
@@ -28,12 +57,12 @@ public enum ImageRepresentationTransformers: String, ReversableValueTransformers
     }
 
     public func transformedValue(_ value: Any?) -> Any? {
-        guard let image = value as? UIImage else {
+        guard let image = value as? ValueImage else {
             return nil
         }
         switch self {
-        case .png: return UIImagePNGRepresentation(image)
-        case .jpeg: return UIImageJPEGRepresentation(image, ImageRepresentationTransformers.kJPEGRepresentationCompressionQuality)
+        case .png: return ImagePNGRepresentation(image)
+        case .jpeg: return ImageJPEGRepresentation(image, ImageRepresentationTransformers.kJPEGRepresentationCompressionQuality)
         }
     }
 
@@ -41,7 +70,7 @@ public enum ImageRepresentationTransformers: String, ReversableValueTransformers
         guard let data = value as? Data else {
             return nil
         }
-        return UIImage.init(data: data)
+        return ValueImage.init(data: data)
     }
 
     public static func reversableName(from name: NSValueTransformerName) -> NSValueTransformerName {
@@ -50,4 +79,3 @@ public enum ImageRepresentationTransformers: String, ReversableValueTransformers
     }
 
 }
-#endif

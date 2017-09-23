@@ -15,7 +15,6 @@ public protocol ValueTransformerRegisterable {
     var transformer: ValueTransformer {get}
     /// The identifier to register the value transformer.
     var name: NSValueTransformerName {get}
-
 }
 
 extension ValueTransformerRegisterable {
@@ -37,12 +36,13 @@ extension ValueTransformer {
 
     /// Registers this value transformer with a given identifier.
     open func setValueTransformer(forName name: NSValueTransformerName) {
+        assert(ValueTransformer(forName: name) == nil)
         ValueTransformer.setValueTransformer(self, forName: name)
     }
 
     /// Registers this value transformer with a given identifier.
     open func setValueTransformer(for string: String) {
-        ValueTransformer.setValueTransformer(self, forName: NSValueTransformerName(string))
+        self.setValueTransformer(forName: NSValueTransformerName(string))
     }
 
 }

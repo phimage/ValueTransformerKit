@@ -5,9 +5,11 @@
 
 import Foundation
 
-open class StringToDataTransformer: ValueTransformer {
+open class StringToDataTransformer: ValueTransformer, ValueTransformerRegisterable {
 
     let encoding: String.Encoding
+
+    open var name: NSValueTransformerName { return NSValueTransformerName(rawValue: "StringToData\(encoding.descriptionForTransformer.capitalized)") }
 
     public init(encoding: String.Encoding = .utf8) {
         self.encoding = encoding
@@ -40,6 +42,8 @@ open class StringToDataTransformer: ValueTransformer {
 }
 
 open class DataToStringTransformer: StringToDataTransformer {
+
+    open override var name: NSValueTransformerName { return NSValueTransformerName(rawValue: "DataToString\(encoding.descriptionForTransformer.capitalized)") }
 
     open override class func transformedValueClass() -> AnyClass {
         return NSData.self

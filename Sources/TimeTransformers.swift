@@ -34,9 +34,13 @@ public enum TimeTransformers: String, ReversableValueTransformers, ResersableVal
     }
 
     public func transformedValue(_ value: Any?) -> Any? {
-        // TODO support timestamp? (here we can, but in reverse we cannot know)
         guard let date = value as? Date else {
-            return nil
+            guard let timeInterval = value as? TimeInterval  else {
+                return nil
+            }
+            // support timestamp? (here we can, but in reverse we cannot know)
+            let date = Date(timeIntervalSince1970: timeInterval)
+            return formatter.string(for: date)
         }
         return formatter.string(for: date)
     }

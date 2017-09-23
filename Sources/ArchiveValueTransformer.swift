@@ -31,7 +31,11 @@ public final class ArchiveValueTransformer: ValueTransformer, ValueTransformerRe
         return NSKeyedUnarchiver.unarchiveObject(with: data)
     }
 
-    public override var reverse: ValueTransformer {
+}
+
+extension ArchiveValueTransformer: ValueTransformerReversable {
+
+    public var reverseInstance: ValueTransformer {
         return UnarchiveValueTransformer.instance
     }
 
@@ -60,8 +64,11 @@ public final class UnarchiveValueTransformer: ValueTransformer, ValueTransformer
         }
         return NSKeyedArchiver.archivedData(withRootObject: value)
     }
+}
 
-    public override var reverse: ValueTransformer {
+extension UnarchiveValueTransformer: ValueTransformerReversable {
+
+    public var reverseInstance: ValueTransformer {
         return ArchiveValueTransformer.instance
     }
 

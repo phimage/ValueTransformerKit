@@ -58,8 +58,9 @@ extension ReversableValueTransformers {
         for transformer in transformers {
             let reverseTransfomers = ReverseValueTransformer(transformer: transformer.transformer)
             let name = reversableName(from: transformer.name)
-
-            reverseTransfomers.setValueTransformer(forName: name)
+            if name != transformer.name {
+                reverseTransfomers.setValueTransformer(forName: name)
+            } // else auto reverse transformer
         }
     }
 

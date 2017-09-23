@@ -23,7 +23,11 @@ final public class IsEmptyTransformer: ValueTransformer, ValueTransformerRegiste
         return object.isEmpty
     }
 
-    public override var reverse: ValueTransformer {
+}
+
+extension IsEmptyTransformer: ValueTransformerReversable {
+
+    public var reverseInstance: ValueTransformer {
         return IsNotEmptyTransformer.instance
     }
 
@@ -47,7 +51,11 @@ final public class IsNotEmptyTransformer: ValueTransformer, ValueTransformerRegi
         return !object.isEmpty
     }
 
-    public override var reverse: ValueTransformer {
+}
+
+extension IsNotEmptyTransformer: ValueTransformerReversable {
+
+    public var reverseInstance: ValueTransformer {
         return IsEmptyTransformer.instance
     }
 
