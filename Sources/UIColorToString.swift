@@ -35,7 +35,7 @@ class UIColorToNSString: ValueTransformer {
                 let g = 255 * components[1]
                 let b = 255 * components[2]
                 let a = numberOfComponents > 3 ? components[3] : 1.0
-                return NSString(format:"rgba(%.0f, %.0f, %.0f, %.2f)", r, g, b, a)
+                return NSString(format: "rgba(%.0f, %.0f, %.0f, %.2f)", r, g, b, a)
             }
         }
         return nil
