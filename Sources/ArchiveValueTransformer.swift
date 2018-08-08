@@ -10,21 +10,21 @@ import Foundation
 @objc(ArchiveValueTransformer)
 public final class ArchiveValueTransformer: ValueTransformer, ValueTransformerRegisterable, ValueTransformerSingleton {
 
-    open var name = NSValueTransformerName(rawValue: "Archive")
+    public var name = NSValueTransformerName(rawValue: "Archive")
     public static let instance = ArchiveValueTransformer()
 
-    open override class func allowsReverseTransformation() -> Bool {
+    public override class func allowsReverseTransformation() -> Bool {
         return true
     }
 
-    open override func transformedValue(_ value: Any?) -> Any? {
+    public override func transformedValue(_ value: Any?) -> Any? {
         guard let value = value else {
             return nil
         }
         return NSKeyedArchiver.archivedData(withRootObject: value)
     }
 
-    open override func reverseTransformedValue(_ value: Any?) -> Any? {
+    public override func reverseTransformedValue(_ value: Any?) -> Any? {
         guard let data = value as? Data else {
             return nil
         }
@@ -44,21 +44,21 @@ extension ArchiveValueTransformer: ValueTransformerReversable {
 @objc(UnarchiveValueTransformer)
 public final class UnarchiveValueTransformer: ValueTransformer, ValueTransformerRegisterable, ValueTransformerSingleton {
 
-    open var name = NSValueTransformerName(rawValue: "Unarchive")
+    public var name = NSValueTransformerName(rawValue: "Unarchive")
     public static let instance = UnarchiveValueTransformer()
 
-    open override class func transformedValueClass() -> AnyClass {
+    public override class func transformedValueClass() -> AnyClass {
         return NSData.self
     }
 
-    open override func transformedValue(_ value: Any?) -> Any? {
+    public override func transformedValue(_ value: Any?) -> Any? {
         guard let data = value as? Data else {
             return nil
         }
         return NSKeyedUnarchiver.unarchiveObject(with: data)
     }
 
-    open override func reverseTransformedValue(_ value: Any?) -> Any? {
+    public override func reverseTransformedValue(_ value: Any?) -> Any? {
         guard let value = value else {
             return nil
         }

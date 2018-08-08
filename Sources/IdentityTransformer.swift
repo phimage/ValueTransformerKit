@@ -9,22 +9,22 @@ import Foundation
 @objc(IdentityTransformer)
 final public class IdentityTransformer: ValueTransformer, ValueTransformerRegisterable, ValueTransformerSingleton {
 
-    open var name = NSValueTransformerName(rawValue: "Identity")
+    public var name = NSValueTransformerName(rawValue: "Identity")
     public static let instance = IdentityTransformer()
 
-    open override class func transformedValueClass() -> AnyClass {
+    public override class func transformedValueClass() -> AnyClass {
         return NSObject.self
     }
 
-    open override class func allowsReverseTransformation() -> Bool {
+    public override class func allowsReverseTransformation() -> Bool {
         return true
     }
 
-    open override func transformedValue(_ value: Any?) -> Any? {
+    public override func transformedValue(_ value: Any?) -> Any? {
         return value
     }
 
-    open override func reverseTransformedValue(_ value: Any?) -> Any? {
+    public override func reverseTransformedValue(_ value: Any?) -> Any? {
         return value
     }
 

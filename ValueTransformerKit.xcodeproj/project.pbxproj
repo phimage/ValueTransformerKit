@@ -27,7 +27,7 @@
 		486545F21EB0CA2A00D3ECCC /* ArrayToStringTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A971E96387D00A4D4F1 /* ArrayToStringTransformer.swift */; };
 		486545F31EB0CA2D00D3ECCC /* ArchiveValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A911E96315A00A4D4F1 /* ArchiveValueTransformer.swift */; };
 		486545F41EB0CA2D00D3ECCC /* StringToDataTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A951E9637FC00A4D4F1 /* StringToDataTransformer.swift */; };
-		486545F51EB0CA2D00D3ECCC /* URLToStringTransFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A891E962FF200A4D4F1 /* URLToStringTransFormer.swift */; };
+		486545F51EB0CA2D00D3ECCC /* URLToStringTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A891E962FF200A4D4F1 /* URLToStringTransformer.swift */; };
 		486545F61EB0CA2D00D3ECCC /* URLStringToImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A8F1E96313A00A4D4F1 /* URLStringToImageTransformer.swift */; };
 		486545F71EB0CA2D00D3ECCC /* SecondsToHoursValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A991E9638B600A4D4F1 /* SecondsToHoursValueTransformer.swift */; };
 		486545F81EB0CA2D00D3ECCC /* EmptyTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A9B1E96390100A4D4F1 /* EmptyTransformer.swift */; };
@@ -43,7 +43,7 @@
 		48F35A821E962DE800A4D4F1 /* IdentityTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A811E962DE800A4D4F1 /* IdentityTransformer.swift */; };
 		48F35A841E962EA200A4D4F1 /* NumberToBoolTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A831E962EA200A4D4F1 /* NumberToBoolTransformer.swift */; };
 		48F35A861E962F2500A4D4F1 /* ImageTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A851E962F2500A4D4F1 /* ImageTransformers.swift */; };
-		48F35A8A1E962FF200A4D4F1 /* URLToStringTransFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A891E962FF200A4D4F1 /* URLToStringTransFormer.swift */; };
+		48F35A8A1E962FF200A4D4F1 /* URLToStringTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A891E962FF200A4D4F1 /* URLToStringTransformer.swift */; };
 		48F35A8C1E96307200A4D4F1 /* StringTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A8B1E96307200A4D4F1 /* StringTransformers.swift */; };
 		48F35A8E1E96310700A4D4F1 /* IsEmptyTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A8D1E96310700A4D4F1 /* IsEmptyTransformer.swift */; };
 		48F35A901E96313A00A4D4F1 /* URLStringToImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35A8F1E96313A00A4D4F1 /* URLStringToImageTransformer.swift */; };
@@ -93,7 +93,7 @@
 		48F35A811E962DE800A4D4F1 /* IdentityTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentityTransformer.swift; sourceTree = "<group>"; };
 		48F35A831E962EA200A4D4F1 /* NumberToBoolTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberToBoolTransformer.swift; sourceTree = "<group>"; };
 		48F35A851E962F2500A4D4F1 /* ImageTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTransformers.swift; sourceTree = "<group>"; };
-		48F35A891E962FF200A4D4F1 /* URLToStringTransFormer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLToStringTransFormer.swift; sourceTree = "<group>"; };
+		48F35A891E962FF200A4D4F1 /* URLToStringTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLToStringTransformer.swift; sourceTree = "<group>"; };
 		48F35A8B1E96307200A4D4F1 /* StringTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTransformers.swift; sourceTree = "<group>"; };
 		48F35A8D1E96310700A4D4F1 /* IsEmptyTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsEmptyTransformer.swift; sourceTree = "<group>"; };
 		48F35A8F1E96313A00A4D4F1 /* URLStringToImageTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLStringToImageTransformer.swift; sourceTree = "<group>"; };
@@ -182,6 +182,7 @@
 				48F35A9B1E96390100A4D4F1 /* EmptyTransformer.swift */,
 				48F35A951E9637FC00A4D4F1 /* StringToDataTransformer.swift */,
 				C45979731F763B42002C1206 /* Operators.swift */,
+				48F35A891E962FF200A4D4F1 /* URLToStringTransformer.swift */,
 				C4974D9C1E9ADAA500DA1DB2 /* Enum */,
 				C4974DA21E9ADF0B00DA1DB2 /* Array */,
 				C4974D9D1E9ADAD300DA1DB2 /* WIP */,
@@ -242,7 +243,6 @@
 		C4974D9D1E9ADAD300DA1DB2 /* WIP */ = {
 			isa = PBXGroup;
 			children = (
-				48F35A891E962FF200A4D4F1 /* URLToStringTransFormer.swift */,
 				48F35A991E9638B600A4D4F1 /* SecondsToHoursValueTransformer.swift */,
 				48F35A831E962EA200A4D4F1 /* NumberToBoolTransformer.swift */,
 				48F35A8F1E96313A00A4D4F1 /* URLStringToImageTransformer.swift */,
@@ -451,7 +451,7 @@
 				C4974D9F1E9ADB9C00DA1DB2 /* NumberTransformers.swift in Sources */,
 				C4974D9B1E9ABB8D00DA1DB2 /* ReverseValueTransformer.swift in Sources */,
 				486545D71EB0C58A00D3ECCC /* TimeTransformers.swift in Sources */,
-				48F35A8A1E962FF200A4D4F1 /* URLToStringTransFormer.swift in Sources */,
+				48F35A8A1E962FF200A4D4F1 /* URLToStringTransformer.swift in Sources */,
 				C45979711F763AE9002C1206 /* PropertyListTransformer.swift in Sources */,
 				48F35A841E962EA200A4D4F1 /* NumberToBoolTransformer.swift in Sources */,
 				C4974D971E9A8F4600DA1DB2 /* JSONValueTransformer.swift in Sources */,
@@ -475,7 +475,7 @@
 				486545F11EB0CA2A00D3ECCC /* OrderedSetToArrayValueTransformer.swift in Sources */,
 				486545E71EB0CA2400D3ECCC /* IdentityTransformer.swift in Sources */,
 				486545E81EB0CA2400D3ECCC /* ReverseValueTransformer.swift in Sources */,
-				486545F51EB0CA2D00D3ECCC /* URLToStringTransFormer.swift in Sources */,
+				486545F51EB0CA2D00D3ECCC /* URLToStringTransformer.swift in Sources */,
 				486545EC1EB0CA2700D3ECCC /* ImageTransformers.swift in Sources */,
 				486545F31EB0CA2D00D3ECCC /* ArchiveValueTransformer.swift in Sources */,
 				486545F21EB0CA2A00D3ECCC /* ArrayToStringTransformer.swift in Sources */,

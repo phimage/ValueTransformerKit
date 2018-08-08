@@ -9,14 +9,14 @@ import Foundation
 @objc(IsEmptyTransformer)
 final public class IsEmptyTransformer: ValueTransformer, ValueTransformerRegisterable, ValueTransformerSingleton {
 
-    open var name = NSValueTransformerName(rawValue: "IsEmpty")
+    public var name = NSValueTransformerName(rawValue: "IsEmpty")
     public static let instance = IsEmptyTransformer()
 
-    open override class func allowsReverseTransformation() -> Bool {
+    public override class func allowsReverseTransformation() -> Bool {
         return false
     }
 
-    open override func transformedValue(_ value: Any?) -> Any? {
+    public override func transformedValue(_ value: Any?) -> Any? {
         guard let object = value as? Emptyable else {
             return false
         }
@@ -37,14 +37,14 @@ extension IsEmptyTransformer: ValueTransformerReversable {
 @objc(IsNotEmptyTransformer)
 final public class IsNotEmptyTransformer: ValueTransformer, ValueTransformerRegisterable, ValueTransformerSingleton {
 
-    open var name = NSValueTransformerName(rawValue: "IsNotEmpty")
+    public var name = NSValueTransformerName(rawValue: "IsNotEmpty")
     public static let instance = IsNotEmptyTransformer()
 
-    open override class func allowsReverseTransformation() -> Bool {
+    public override class func allowsReverseTransformation() -> Bool {
         return false
     }
 
-    open override func transformedValue(_ value: Any?) -> Any? {
+    public override func transformedValue(_ value: Any?) -> Any? {
         guard let object = value as? Emptyable else {
             return false
         }

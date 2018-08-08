@@ -307,7 +307,7 @@ class Tests: XCTestCase {
             XCTFail()
         }
     }
-    
+ 
     func testOperator() {
         let stringTransformer = ArrayStringJSONValueTransformer() + String.Encoding.utf8.transformer
        
@@ -328,6 +328,24 @@ class Tests: XCTestCase {
             XCTAssertEqual(newArray, array)
         } else {
             XCTFail()
+        }
+    }
+
+    func testURLTransformer() {
+        let transformer = URLToStringTransformer()
+        let urlStrings = ["http://www.exemple.com", "tel:0105050", "file://path/to/a/file"]
+        for urlString in urlStrings {
+            if let url = URL(string: urlString) {
+                if let string = transformer.transformedValue(url) as? String {
+                    XCTAssertEqual(urlString, string)
+                } else {
+                    XCTFail("Faield to convert to string from url created with \(urlString)")
+                }
+                XCTAssertEqual(url, transformer.reverse.transformedValue(urlString) as? URL)
+
+            } else {
+                XCTFail("Faield to convert to url \(urlString)")
+            }
         }
     }
 
@@ -352,7 +370,7 @@ struct TestObject: Codable, Equatable {
     var string: String
     var integer: Int
 
-    public static func ==(lhs: Self, rhs: Self) -> Bool {
+    public static func ==(lhs: TestObject, rhs: TestObject) -> Bool {
         return lhs.string == rhs.string && lhs.integer == rhs.integer
     }
 

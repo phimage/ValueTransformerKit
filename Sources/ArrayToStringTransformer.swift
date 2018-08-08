@@ -10,7 +10,7 @@ final public class ArrayToStringTransformer: ValueTransformer, ValueTransformerR
     public static var namePrefix = "ArrayToString"
     public static var reversableNamePrefix = "StringToArray"
 
-    open var name = NSValueTransformerName(rawValue: ArrayToStringTransformer.namePrefix)
+    public var name = NSValueTransformerName(rawValue: ArrayToStringTransformer.namePrefix)
     public static let instance = ArrayToStringTransformer()
 
     let separator: String
@@ -19,22 +19,22 @@ final public class ArrayToStringTransformer: ValueTransformer, ValueTransformerR
         self.separator = separator
     }
 
-    open override class func transformedValueClass() -> AnyClass {
+    public override class func transformedValueClass() -> AnyClass {
         return NSArray.self
     }
 
-    open override class func allowsReverseTransformation() -> Bool {
+    public override class func allowsReverseTransformation() -> Bool {
         return true
     }
 
-    open override func transformedValue(_ value: Any?) -> Any? {
+    public override func transformedValue(_ value: Any?) -> Any? {
         guard let randomArray = value as? [String] else {
             return nil
         }
         return randomArray.joined(separator: separator)
     }
 
-    open override func reverseTransformedValue(_ value: Any?) -> Any? {
+    public override func reverseTransformedValue(_ value: Any?) -> Any? {
         guard let randomString = value as? String else {
             return nil
         }
