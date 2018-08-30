@@ -10,6 +10,8 @@
 		480BE91C1E953CE3002295D1 /* ValueTransformerKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 480BE91A1E953CE3002295D1 /* ValueTransformerKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		480BE9271E954B84002295D1 /* ClosureValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480BE9261E954B84002295D1 /* ClosureValueTransformer.swift */; };
 		480BE9291E954E5D002295D1 /* DateTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480BE9281E954E5D002295D1 /* DateTransformers.swift */; };
+		484B2D0B213822FA00F203D0 /* Base64Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B2D0A213822FA00F203D0 /* Base64Transformer.swift */; };
+		484B2D0C213822FA00F203D0 /* Base64Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B2D0A213822FA00F203D0 /* Base64Transformer.swift */; };
 		486545D71EB0C58A00D3ECCC /* TimeTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486545D61EB0C58A00D3ECCC /* TimeTransformers.swift */; };
 		486545E21EB0CA1300D3ECCC /* ValueTransformerKitMacOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 486545E01EB0CA1300D3ECCC /* ValueTransformerKitMacOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		486545E61EB0CA2400D3ECCC /* ValueTransformerRegisterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4974D981E9AB76F00DA1DB2 /* ValueTransformerRegisterable.swift */; };
@@ -81,6 +83,7 @@
 		480BE91B1E953CE3002295D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		480BE9261E954B84002295D1 /* ClosureValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureValueTransformer.swift; sourceTree = "<group>"; };
 		480BE9281E954E5D002295D1 /* DateTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTransformers.swift; sourceTree = "<group>"; };
+		484B2D0A213822FA00F203D0 /* Base64Transformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64Transformer.swift; sourceTree = "<group>"; };
 		486545D61EB0C58A00D3ECCC /* TimeTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTransformers.swift; sourceTree = "<group>"; };
 		486545DE1EB0CA1300D3ECCC /* ValueTransfomerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ValueTransfomerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		486545E01EB0CA1300D3ECCC /* ValueTransformerKitMacOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValueTransformerKitMacOS.h; sourceTree = "<group>"; };
@@ -181,6 +184,7 @@
 				C45979701F763AE9002C1206 /* PropertyListTransformer.swift */,
 				48F35A9B1E96390100A4D4F1 /* EmptyTransformer.swift */,
 				48F35A951E9637FC00A4D4F1 /* StringToDataTransformer.swift */,
+				484B2D0A213822FA00F203D0 /* Base64Transformer.swift */,
 				C45979731F763B42002C1206 /* Operators.swift */,
 				48F35A891E962FF200A4D4F1 /* URLToStringTransformer.swift */,
 				C4974D9C1E9ADAA500DA1DB2 /* Enum */,
@@ -433,6 +437,7 @@
 				48F35A961E9637FC00A4D4F1 /* StringToDataTransformer.swift in Sources */,
 				48F35A901E96313A00A4D4F1 /* URLStringToImageTransformer.swift in Sources */,
 				480BE9291E954E5D002295D1 /* DateTransformers.swift in Sources */,
+				484B2D0C213822FA00F203D0 /* Base64Transformer.swift in Sources */,
 				48F35A861E962F2500A4D4F1 /* ImageTransformers.swift in Sources */,
 				C4974DA11E9ADE0A00DA1DB2 /* LocalKeyTransformers.swift in Sources */,
 				48F35A8C1E96307200A4D4F1 /* StringTransformers.swift in Sources */,
@@ -466,6 +471,7 @@
 				486545E61EB0CA2400D3ECCC /* ValueTransformerRegisterable.swift in Sources */,
 				486545EE1EB0CA2700D3ECCC /* NumberTransformers.swift in Sources */,
 				486545E91EB0CA2400D3ECCC /* IsEmptyTransformer.swift in Sources */,
+				484B2D0B213822FA00F203D0 /* Base64Transformer.swift in Sources */,
 				486545EB1EB0CA2700D3ECCC /* StringTransformers.swift in Sources */,
 				486545FC1EB0CF3800D3ECCC /* UIColorToString.swift in Sources */,
 				486545FA1EB0CA2D00D3ECCC /* JSONValueTransformer.swift in Sources */,
