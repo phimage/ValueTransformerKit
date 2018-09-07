@@ -5,13 +5,27 @@
 
 import Foundation
 
-public enum DateTransformers: String, ReversableValueTransformers, ResersableValueTransformerType {
+public enum DateTransformers: ReversableValueTransformers, ResersableValueTransformerType {
 
     case rfc822
     case short
     case medium
     case long
     case full
+    case formatter(DateFormatter)
+    case dateFormat(String)
+
+    var rawValue: String {
+        switch self {
+        case .rfc822: return "rfc822"
+        case .short: return "shortDate"
+        case .medium: return "mediumDate"
+        case .long: return "longDate"
+        case .full: return "fullDate"
+        case .formatter(let format): return "formatter"+format.dateFormat
+        case .dateFormat(let format): return "dateFormat"+format
+        }
+    }
 
     public static let transformers: [DateTransformers] = [.rfc822, .short, .medium, .long, .full]
 
@@ -25,6 +39,11 @@ public enum DateTransformers: String, ReversableValueTransformers, ResersableVal
         case .medium: return .mediumDate
         case .long: return .longDate
         case .full: return .fullDate
+        case .formatter(let format): return format
+        case .dateFormat(let dateFormat):
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = dateFormat
+            return dateFormatter
         }
     }
 

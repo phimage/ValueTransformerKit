@@ -5,13 +5,29 @@
 
 import Foundation
 
-public enum StringTransformers: String, ValueTransformers, ValueTransformerType {
+public enum StringTransformers: ValueTransformers, ValueTransformerType {
 
     case capitalized
     case lowercased
     case uppercased
+    case format(String)
+    case localized(Bundle)
 
-    public static let transformers: [StringTransformers] = [.capitalized, .lowercased, .uppercased]
+    var rawValue: String {
+        switch self {
+        case .capitalized: return "capitalized"
+        case .lowercased: return "lowercased"
+        case .uppercased: return "uppercased"
+        case .format(let format): return "format"+format
+        case .localized(let bundle):
+            if bundle == Bundle.main {
+                return "localized"
+            }
+            return "localized"+bundle.bundlePath
+        }
+    }
+
+    public static let transformers: [StringTransformers] = [.capitalized, .lowercased, .uppercased, .localized(.main)]
 
     public static var namePrefix = "String"
 
@@ -27,7 +43,10 @@ public enum StringTransformers: String, ValueTransformers, ValueTransformerType 
         case .capitalized: return string.capitalized
         case .lowercased: return string.lowercased()
         case .uppercased: return string.uppercased()
+        case .format(let format): return String(format: format, string)
+        case .localized(let bundle): return NSLocalizedString(string, bundle: bundle, comment: "")
         }
+
     }
 
 }
