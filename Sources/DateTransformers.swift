@@ -15,18 +15,6 @@ public enum DateTransformers: ReversableValueTransformers, ResersableValueTransf
     case formatter(DateFormatter)
     case dateFormat(String)
 
-    var rawValue: String {
-        switch self {
-        case .rfc822: return "rfc822"
-        case .short: return "shortDate"
-        case .medium: return "mediumDate"
-        case .long: return "longDate"
-        case .full: return "fullDate"
-        case .formatter(let format): return "formatter"+format.dateFormat
-        case .dateFormat(let format): return "dateFormat"+format
-        }
-    }
-
     public static let transformers: [DateTransformers] = [.rfc822, .short, .medium, .long, .full]
 
     public static var namePrefix = "Date"
@@ -39,16 +27,28 @@ public enum DateTransformers: ReversableValueTransformers, ResersableValueTransf
         case .medium: return .mediumDate
         case .long: return .longDate
         case .full: return .fullDate
-        case .formatter(let format): return format
+        case .formatter(let formatter): return formatter
         case .dateFormat(let dateFormat):
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = dateFormat
-            return dateFormatter
+            let formatter = DateFormatter()
+            formatter.dateFormat = dateFormat
+            return formatter
+        }
+    }
+
+    var description: String {
+        switch self {
+        case .rfc822: return "rfc822"
+        case .short: return "shortDate"
+        case .medium: return "mediumDate"
+        case .long: return "longDate"
+        case .full: return "fullDate"
+        case .formatter(let formatter): return "formatter" + formatter.dateFormat
+        case .dateFormat(let format): return "dateFormat" + format
         }
     }
 
     public var name: NSValueTransformerName {
-        return NSValueTransformerName(DateTransformers.namePrefix + self.rawValue.capitalized)
+        return NSValueTransformerName(DateTransformers.namePrefix + self.description.capitalized)
     }
 
     public func transformedValue(_ value: Any?) -> Any? {

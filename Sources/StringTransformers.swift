@@ -13,7 +13,11 @@ public enum StringTransformers: ValueTransformers, ValueTransformerType {
     case format(String)
     case localized(Bundle)
 
-    var rawValue: String {
+    public static let transformers: [StringTransformers] = [.capitalized, .lowercased, .uppercased, .localized(.main)]
+
+    public static var namePrefix = "String"
+
+    var description: String {
         switch self {
         case .capitalized: return "capitalized"
         case .lowercased: return "lowercased"
@@ -27,12 +31,8 @@ public enum StringTransformers: ValueTransformers, ValueTransformerType {
         }
     }
 
-    public static let transformers: [StringTransformers] = [.capitalized, .lowercased, .uppercased, .localized(.main)]
-
-    public static var namePrefix = "String"
-
     public var name: NSValueTransformerName {
-        return NSValueTransformerName(StringTransformers.namePrefix + self.rawValue.capitalized)
+        return NSValueTransformerName(StringTransformers.namePrefix + self.description.capitalized)
     }
 
     public func transformedValue(_ value: Any?) -> Any? {
