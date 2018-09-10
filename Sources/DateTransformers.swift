@@ -5,13 +5,15 @@
 
 import Foundation
 
-public enum DateTransformers: String, ReversableValueTransformers, ResersableValueTransformerType {
+public enum DateTransformers: ReversableValueTransformers, ResersableValueTransformerType {
 
     case rfc822
     case short
     case medium
     case long
     case full
+    case formatter(DateFormatter)
+    case dateFormat(String)
 
     public static let transformers: [DateTransformers] = [.rfc822, .short, .medium, .long, .full]
 
@@ -25,11 +27,28 @@ public enum DateTransformers: String, ReversableValueTransformers, ResersableVal
         case .medium: return .mediumDate
         case .long: return .longDate
         case .full: return .fullDate
+        case .formatter(let formatter): return formatter
+        case .dateFormat(let dateFormat):
+            let formatter = DateFormatter()
+            formatter.dateFormat = dateFormat
+            return formatter
+        }
+    }
+
+    var description: String {
+        switch self {
+        case .rfc822: return "rfc822"
+        case .short: return "shortDate"
+        case .medium: return "mediumDate"
+        case .long: return "longDate"
+        case .full: return "fullDate"
+        case .formatter(let formatter): return "formatter" + formatter.dateFormat
+        case .dateFormat(let format): return "dateFormat" + format
         }
     }
 
     public var name: NSValueTransformerName {
-        return NSValueTransformerName(DateTransformers.namePrefix + self.rawValue.capitalized)
+        return NSValueTransformerName(DateTransformers.namePrefix + self.description.capitalized)
     }
 
     public func transformedValue(_ value: Any?) -> Any? {

@@ -8,62 +8,53 @@
 
 import Foundation
 
-public enum NumberTransformers: String, ReversableValueTransformers, ResersableValueTransformerType {
+public enum NumberTransformers: ReversableValueTransformers, ResersableValueTransformerType {
 
-    case none
-    case decimal
-    case currency
-    case percent
-    case scientific
-    case spellOut
-    case ordinal
-    case currencyISOCode
-    case currencyPlural
-    case currencyAccounting
+    case numberStyle(NumberFormatter.Style)
+    case formatter(NumberFormatter)
+    case numberFormat(String)
 
-    public static let transformers: [NumberTransformers] = [.none, .decimal, .currency, .percent, .scientific, .spellOut, .ordinal, .currencyISOCode, .currencyPlural, .currencyAccounting]
+    public static let transformers: [NumberTransformers] = {
+        let styles: [NumberFormatter.Style] =  [.none, .decimal, .percent, .scientific, .spellOut, .ordinal,
+                                                .currency, .currencyISOCode, .currencyPlural, .currencyAccounting]
+        return styles.map { .numberStyle($0) }
+    }()
 
     public static var namePrefix = "Number"
     public static var reversableNamePrefix = "StringToNumber"
 
     public var formatter: NumberFormatter {
         switch self {
-        case .none: return .none
-        case .decimal: return .decimal
-        case .currency: return .currency
-        case .percent: return .percent
-        case .scientific: return .scientific
-        case .spellOut: return .spellOut
-        case .ordinal: return .ordinal
-        case .currencyISOCode: return .currencyISOCode
-        case .currencyPlural: return .currencyPlural
-        case .currencyAccounting: return .currencyAccounting
+        case .numberStyle(let style): return NumberFormatter.with(style: style)
+        case .formatter(let formatter): return formatter
+        case .numberFormat(let format):
+            let formatter = NumberFormatter()
+            formatter.positiveFormat = format
+            return formatter
         }
-        /*let formatter = NumberFormatter()
-        formatter.numberStyle = numberStyle
-        return formatter*/
     }
 
     public var numberStyle: NumberFormatter.Style {
         switch self {
-        case .none: return .none
-        case .decimal: return .decimal
-        case .currency: return .currency
-        case .percent: return .percent
-        case .scientific: return .scientific
-        case .spellOut: return .spellOut
-        case .ordinal: return .ordinal
-        case .currencyISOCode: return .currencyISOCode
-        case .currencyPlural: return .currencyPlural
-        case .currencyAccounting: return .currencyAccounting
+        case .numberStyle(let style): return style
+        case .formatter(let formatter): return formatter.numberStyle
+        default: return self.formatter.numberStyle
+        }
+    }
+
+    public var description: String {
+        switch self {
+        case .numberStyle(let style): return "\(style.description)"
+        case .formatter(let formatter): return "formatter" + formatter.positiveFormat
+        case .numberFormat(let format): return "numberFormat" + format
         }
     }
 
     public var name: NSValueTransformerName {
-        if case .none = self {
+        if case .numberStyle(.none) = self {
             return NSValueTransformerName(NumberTransformers.namePrefix)
         }
-        return NSValueTransformerName(NumberTransformers.namePrefix + self.rawValue.capitalized)
+        return NSValueTransformerName(NumberTransformers.namePrefix + self.description.capitalized)
     }
 
     public func transformedValue(_ value: Any?) -> Any? {
@@ -89,64 +80,27 @@ public enum NumberTransformers: String, ReversableValueTransformers, ResersableV
 
 fileprivate extension NumberFormatter {
 
-    static let none: NumberFormatter  = {
+    static func with(style: NumberFormatter.Style) -> NumberFormatter {
         let formatter = NumberFormatter()
-        formatter.numberStyle = .none
+        formatter.numberStyle = style
         return formatter
-    }()
+    }
 
-    static let decimal: NumberFormatter  = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        return formatter
-    }()
+}
 
-    static let currency: NumberFormatter  = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        return formatter
-    }()
-
-    static let scientific: NumberFormatter  = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .scientific
-        return formatter
-    }()
-
-    static let percent: NumberFormatter  = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .percent
-        return formatter
-    }()
-
-    static let spellOut: NumberFormatter  = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .spellOut
-        return formatter
-    }()
-
-    static let ordinal: NumberFormatter  = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .ordinal
-        return formatter
-    }()
-
-    static let currencyISOCode: NumberFormatter  = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currencyISOCode
-        return formatter
-    }()
-
-    static let currencyPlural: NumberFormatter  = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currencyPlural
-        return formatter
-    }()
-
-    static let currencyAccounting: NumberFormatter  = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currencyAccounting
-        return formatter
-    }()
-
+fileprivate extension NumberFormatter.Style {
+    var description: String {
+        switch self {
+        case .none: return "none"
+        case .decimal: return "decimal"
+        case .currency: return "currency"
+        case .percent: return "percent"
+        case .scientific: return "scientific"
+        case .spellOut: return "spellOut"
+        case .ordinal: return "ordinal"
+        case .currencyISOCode: return "currencyISOCode"
+        case .currencyPlural: return "currencyPlural"
+        case .currencyAccounting: return "currencyAccounting"
+        }
+    }
 }
