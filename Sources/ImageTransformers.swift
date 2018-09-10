@@ -11,11 +11,19 @@
     typealias ValueImage = UIImage
 
       func ImagePNGRepresentation(_ image: ValueImage) -> Data? {
+        #if swift(>=4.2)
+        return image.pngData()
+        #else
         return UIImagePNGRepresentation(image)
+        #endif
     }
 
     func ImageJPEGRepresentation(_ image: ValueImage, _ compressionFactor: CGFloat) -> Data? {
+        #if swift(>=4.2)
+        return image. jpegData(compressionQuality: compressionFactor)
+        #else
         return UIImageJPEGRepresentation(image, compressionFactor)
+        #endif
     }
 
 #elseif os(macOS)
