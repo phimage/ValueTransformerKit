@@ -353,7 +353,7 @@
 				TargetAttributes = {
 					480BE9161E953CE3002295D1 = {
 						CreatedOnToolsVersion = 8.3;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					486545DD1EB0CA1300D3ECCC = {
@@ -649,7 +649,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -668,7 +668,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.ValueTransformerKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
