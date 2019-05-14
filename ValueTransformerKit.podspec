@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name         = "ValueTransformerKit"
-  s.version      = "1.1.1"
+  s.version      = "1.2.0"
   s.summary      = "A Swift library to play with ValueTransformer"
   s.description  = <<-DESC
                    ValueTransformerKit define some useful protocols for `ValueTransformer`.

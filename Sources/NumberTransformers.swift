@@ -101,6 +101,10 @@ fileprivate extension NumberFormatter.Style {
         case .currencyISOCode: return "currencyISOCode"
         case .currencyPlural: return "currencyPlural"
         case .currencyAccounting: return "currencyAccounting"
+            #if swift(>=5.0)
+        @unknown default:
+            fatalError("No string description for NumberFormatter.Style \(self)")
+            #endif
         }
     }
 }
