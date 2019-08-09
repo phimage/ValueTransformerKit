@@ -11,7 +11,11 @@ public enum StringTransformers: ValueTransformers, ValueTransformerType {
     case lowercased
     case uppercased
     case format(String)
-    case localized(Bundle)
+    case localized(Bundle, String?)
+
+    public static func localized(_ bundle: Bundle = .main) -> StringTransformers {
+        return .localized(bundle, nil)
+    }
 
     public static let transformers: [StringTransformers] = [.capitalized, .lowercased, .uppercased, .localized(.main)]
 
@@ -23,11 +27,15 @@ public enum StringTransformers: ValueTransformers, ValueTransformerType {
         case .lowercased: return "lowercased"
         case .uppercased: return "uppercased"
         case .format(let format): return "format"+format
-        case .localized(let bundle):
-            if bundle == Bundle.main {
-                return "localized"
+        case .localized(let bundle, let tableName):
+            var name = "localized"
+            if bundle != Bundle.main {
+                name += bundle.bundlePath
             }
-            return "localized"+bundle.bundlePath
+            if let tableName = tableName {
+                name += tableName
+            }
+            return name
         }
     }
 
@@ -44,9 +52,8 @@ public enum StringTransformers: ValueTransformers, ValueTransformerType {
         case .lowercased: return string.lowercased()
         case .uppercased: return string.uppercased()
         case .format(let format): return String(format: format, string)
-        case .localized(let bundle): return NSLocalizedString(string, bundle: bundle, comment: "")
+        case .localized(let bundle, let tableName): return NSLocalizedString(string, tableName: tableName, bundle: bundle, comment: "")
         }
-
     }
 
 }
