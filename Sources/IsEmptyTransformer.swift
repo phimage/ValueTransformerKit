@@ -82,3 +82,22 @@ extension Optional where Wrapped: Emptyable {
     }
 
 }
+extension NSString: Emptyable {
+    public var isEmpty: Bool {
+        return length == 0
+    }
+}
+
+public protocol EmptyableByCount: Emptyable {
+    var count: Int { get }
+}
+extension EmptyableByCount {
+
+    public var isEmpty: Bool {
+        return self.count == 0 // swiftlint:disable:this empty_count
+    }
+}
+
+extension NSArray: EmptyableByCount {}
+extension NSSet: EmptyableByCount {}
+extension NSDictionary: EmptyableByCount {}

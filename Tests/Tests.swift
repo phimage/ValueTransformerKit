@@ -349,6 +349,58 @@ class Tests: XCTestCase {
         }
     }
 
+    func testIsEmpty() {
+        let isEmpty = IsEmptyTransformer()
+
+        var result = isEmpty.transformedValue([]) as? Bool ?? false
+        XCTAssertTrue(result, "is empty fail on array")
+        result = isEmpty.transformedValue([:]) as? Bool ?? false
+        XCTAssertTrue(result, "is empty fail on dictionary")
+        result = isEmpty.transformedValue("") as? Bool ?? false
+        XCTAssertTrue(result, "is empty fail on string")
+        result = isEmpty.transformedValue("test") as? Bool ?? true
+        XCTAssertFalse(result, "not is empty fail on string")
+
+        result = isEmpty.transformedValue(NSArray()) as? Bool ?? false
+        XCTAssertTrue(result, "is empty fail on NSArray")
+        result = isEmpty.transformedValue(NSDictionary()) as? Bool ?? false
+        XCTAssertTrue(result, "is empty fail on NSDictionary")
+        result = isEmpty.transformedValue(NSSet()) as? Bool ?? false
+        XCTAssertTrue(result, "is empty fail on NSSet")
+        result = isEmpty.transformedValue(NSString()) as? Bool ?? false
+        XCTAssertTrue(result, "is empty fail on NSString")
+        result = isEmpty.transformedValue(NSString("test")) as? Bool ?? true
+        XCTAssertFalse(result, "not is empty fail on NSString")
+    }
+
+    func testIsNotEmpty() {
+        let isNotEmpty = IsNotEmptyTransformer()
+
+        var result = isNotEmpty.transformedValue([]) as? Bool ?? true
+        XCTAssertFalse(result, "not is not empty fail on array")
+        result = isNotEmpty.transformedValue(["azeaze"]) as? Bool ?? false
+        XCTAssertTrue(result, "is not empty fail on array")
+        result = isNotEmpty.transformedValue([:]) as? Bool ?? true
+        XCTAssertFalse(result, "not is not empty fail on dictionary")
+        result = isNotEmpty.transformedValue(["azeae":"azeae"]) as? Bool ?? false
+        XCTAssertTrue(result, "is not empty fail on dictionary")
+        result = isNotEmpty.transformedValue("") as? Bool ?? true
+        XCTAssertFalse(result, "not is not empty fail on string")
+        result = isNotEmpty.transformedValue("test") as? Bool ?? false
+        XCTAssertTrue(result, "not is not empty fail on string")
+        
+        result = isNotEmpty.transformedValue(NSArray()) as? Bool ?? true
+        XCTAssertFalse(result, "not is not empty fail on NSArray")
+        result = isNotEmpty.transformedValue(NSDictionary()) as? Bool ?? true
+        XCTAssertFalse(result, "not is not empty fail on NSDictionary")
+        result = isNotEmpty.transformedValue(NSSet()) as? Bool ?? true
+        XCTAssertFalse(result, "not is not empty fail on NSSet")
+        result = isNotEmpty.transformedValue(NSString()) as? Bool ?? true
+        XCTAssertFalse(result, "not is not empty fail on NSString")
+        result = isNotEmpty.transformedValue(NSString("test")) as? Bool ?? false
+        XCTAssertTrue(result, "is not empty fail on NSString")
+    }
+
     func _testImageRepresentationTransformers() {
         XCTFail("not implemented")
     }
