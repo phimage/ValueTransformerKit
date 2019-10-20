@@ -7,8 +7,9 @@
 [![Language](http://img.shields.io/badge/language-swift-orange.svg?style=flat
              )](https://developer.apple.com/swift)
 
-A closure and protocol based framework for `ValueTransformer`, helpful functions to register `ValueTransformer` by identifier.
+A closure and protocol based framework for [`ValueTransformer`](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ValueTransformers/ValueTransformers.html), helpful functions to register `ValueTransformer` by identifier.
 
+See [Some implementations](#some-implementations)
 
 ## Create a `ValueTransformer`
 ### Using closures
@@ -78,7 +79,7 @@ or all case
 StringTransformers.register()
 ```
 
-## Some implementations
+## Some implementations ##
 
 ### String
 
@@ -103,6 +104,10 @@ StringTransformers.register()
 ### Locale component
 
 - Using `NSLocale.Key`
+
+### Check if empty or not
+
+- Using `IsEmpty`(resp. `IsNotEmpty`) you could transform `String`, `NSString`, `Array`, `NSArray`, `Dictionnary`, etc... to boolean. `true`(resp. `false`) if empty
 
 ## Apple Doc
 https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ValueTransformers/ValueTransformers.html
