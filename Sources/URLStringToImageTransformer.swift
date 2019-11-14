@@ -6,6 +6,7 @@
 import Foundation
 
 #if os(iOS) || os(tvOS) || os(watchOS)
+import UIKit
 class URLStringToImageTransformer: ValueTransformer {
 
     override class func transformedValueClass() -> AnyClass {
