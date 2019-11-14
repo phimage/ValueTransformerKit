@@ -1,11 +1,17 @@
 # ValueTransformerKit
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat
-            )](http://mit-license.org)
-[![Platform](http://img.shields.io/badge/platform-ios/macos-lightgrey.svg?style=flat
-             )](https://developer.apple.com/resources/)
-[![Language](http://img.shields.io/badge/language-swift-orange.svg?style=flat
-             )](https://developer.apple.com/swift)
+[![Build Status][build-shield]][build-url]
+[![Swift 5.1][swift-shield]][swift-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![Sponsor][sponsor-shield]][sponsor-url]
+<a href="https://www.patreon.com/phimage">
+<img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron!" height="20">
+</a>
+<a href="https://paypal.me/ericphimage">
+<img src="https://buymecoffee.intm.org/img/button-paypal-white.png" alt="Buy me a coffee" height="20">
+</a>
 
 A closure and protocol based framework for [`ValueTransformer`](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ValueTransformers/ValueTransformers.html), helpful functions to register `ValueTransformer` by identifier.
 
@@ -115,3 +121,18 @@ https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Value
 ## License
 
 ValueTransformerKit is available under the MIT license. See the LICENSE file for more info.
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[stars-shield]: https://img.shields.io/github/stars/phimage/ValueTransformerKit.svg?style=flat
+[stars-url]: https://github.com/phimage/ValueTransformerKit/stargazers
+[issues-shield]: https://img.shields.io/github/issues/phimage/ValueTransformerKit.svg?style=flat
+[issues-url]: https://github.com/phimage/ValueTransformerKit/issues
+[license-shield]: https://img.shields.io/github/license/phimage/ValueTransformerKit.svg?style=flat
+[license-url]: https://github.com/phimage/ValueTransformerKit/blob/master/LICENSE
+[swift-shield]: https://img.shields.io/badge/Swift-5.1-orange.svg?style=flat
+[swift-url]: https://developer.apple.com/swift/
+[build-shield]: https://travis-ci.org/phimage/ValueTransformerKit.svg?branch=master
+[build-url]: https://travis-ci.org/phimage/ValueTransformerKit
+[sponsor-shield]: https://img.shields.io/badge/Sponsor-%F0%9F%A7%A1-white.svg?style=flat
+[sponsor-url]: https://github.com/sponsors/phimage
