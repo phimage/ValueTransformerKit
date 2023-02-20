@@ -35,13 +35,13 @@ extension ValueTransformerRegisterable where Self: ValueTransformer {
 extension ValueTransformer {
 
     /// Registers this value transformer with a given identifier.
-    open func setValueTransformer(forName name: NSValueTransformerName) {
+    public func setValueTransformer(forName name: NSValueTransformerName) {
         assert(ValueTransformer(forName: name) == nil)
         ValueTransformer.setValueTransformer(self, forName: name)
     }
 
     /// Registers this value transformer with a given identifier.
-    open func setValueTransformer(for string: String) {
+    public func setValueTransformer(for string: String) {
         self.setValueTransformer(forName: NSValueTransformerName(string))
     }
 

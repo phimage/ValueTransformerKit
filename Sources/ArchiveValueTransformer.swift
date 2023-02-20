@@ -21,7 +21,12 @@ public final class ArchiveValueTransformer: ValueTransformer, ValueTransformerRe
         guard let value = value else {
             return nil
         }
-        return NSKeyedArchiver.archivedData(withRootObject: value)
+        do {
+            return try NSKeyedArchiver.archivedData(withRootObject: value, requiringSecureCoding: false)
+        } catch {
+            // XXX add log
+            return nil
+        }
     }
 
     public override func reverseTransformedValue(_ value: Any?) -> Any? {
@@ -62,7 +67,12 @@ public final class UnarchiveValueTransformer: ValueTransformer, ValueTransformer
         guard let value = value else {
             return nil
         }
-        return NSKeyedArchiver.archivedData(withRootObject: value)
+        do {
+            return try NSKeyedArchiver.archivedData(withRootObject: value, requiringSecureCoding: false)
+        } catch {
+            // XXX add log
+            return nil
+        }
     }
 }
 
