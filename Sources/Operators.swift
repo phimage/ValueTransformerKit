@@ -82,7 +82,7 @@ extension ValueTransformer {
 
 }
 extension ValueTransformerType {
-    public static func + (left: ValueTransformerType, right: ValueTransformerType) -> ValueTransformer {
+    public static func + (left: Self, right: Self) -> ValueTransformer {
         return CompoundValueTransformer(transformers: [left.transformer, right.transformer])
     }
 }
